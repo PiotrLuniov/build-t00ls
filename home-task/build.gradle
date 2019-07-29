@@ -12,33 +12,18 @@ dependencies {
     compile 'junit:junit:4.12'
 }
 
-task "1build-custom" {
-    doLast {
-        println 'Executing the custom build'
-    }
-}
-
-task "test-custom" {
-    dependsOn '1build-custom'
-    doLast {
-        println "Custom task!"
-    }
-}
-
-task "hello" {
-    dependsOn 'test-custom'
-    doLast {
-        println "test hello!"
-    }
-}
-
- group = 'com.mnt.training'
- version = '0.1.0'
- description = 'maven-simple-project'
- sourceCompatibility = '1.8'
+group = 'com.mnt.training'
+version = '0.1.0'
+description = 'maven-simple-project'
+sourceCompatibility = '1.8'
 
 jar {
-    manifest {
-        attributes 'Main-Class': 'com.test.Project'
-    }
+
+jar.baseName = 'test-artefact'
+
+manifest {
+attributes(
+'Main-Class': 'com.mypackage.MyClass'
+)
+}
 }
