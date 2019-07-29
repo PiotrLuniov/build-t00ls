@@ -1,0 +1,38 @@
+apply plugin:'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'commons-collections', name: 'commons-collections', version: '3.2.1'
+    compile group: 'log4j', name: 'log4j', version: '1.2.17'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+task "1build-custom" {
+    doLast {
+        println 'Executing the custom build'
+    }
+}
+
+task "test-custom" {
+    dependsOn '1build-custom'
+    doLast {
+        println "I'm not a default task!"
+    }
+}
+
+task "hello" {
+    dependsOn 'test-custom'
+    doLast {
+        println "I want to clean up before running!"
+    }
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.test.Project'
+    }
+}
