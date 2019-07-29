@@ -10,22 +10,40 @@
 
     <name>maven-home-task</name>
 
-<!--     <properties>
-    	<maven.compiler.source>1.7</maven.compiler.source>
-    	<maven.compiler.target>1.7</maven.compiler.target>
-  	</properties> -->
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <configuration>
+            <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <classpathPrefix>lib/</classpathPrefix>
+                <mainClass>com.test.Project</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
+        </plugin>
+      </plugins>
+    </build>
  
   	<dependencies>
+      <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>3.0</version>
+      </dependency>
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.17</version>
+      </dependency>
     	<dependency>
-      		<groupId>junit</groupId>
-      		<artifactId>junit</artifactId>
-      		<version>4.12</version>
-      		<scope>test</scope>
+    		<groupId>junit</groupId>
+    		<artifactId>junit</artifactId>
+    		<version>4.12</version>
+    		<scope>test</scope>
     	</dependency>
-<!--       <dependency>
-          <groupId>org.openrdf.sesame</groupId>
-          <artifactId>sesame-rio-api</artifactId>
-          <version>4.1.2</version>
-      </dependency> -->
   	</dependencies>
 </project>

@@ -1,7 +1,7 @@
-package main.java.com.test;
+package com.test;
 
-// import org.apache.commons.collections.Predicate;
-// import org.apache.log4j.Logger;
+import org.apache.commons.collections.Predicate;
+import org.apache.log4j.Logger;
 
 public class Project {
 
@@ -16,5 +16,4 @@ public class Project {
   public static void main(String[] args) {
     System.out.println(new Project().getGreeting());
   }
-
  }
