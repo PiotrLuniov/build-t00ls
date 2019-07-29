@@ -1,0 +1,43 @@
+apply plugin: 'java'
+group = 'com.test'
+version = '1.0.0-SNAPSHOT'
+repositories {
+   mavenCentral()
+}
+
+task(buildCustom) {
+    doLast {
+        println 'Custom build'
+    }
+}
+
+task(testCustom) {
+    doLast {
+        println 'Custom test'
+    }
+}
+
+testCustom.dependsOn {
+    tasks.findAll { task -> task.name.equals('buildCustom') }
+}
+
+task(hello) {
+    doLast {
+        println 'Hello!'
+    }
+}
+
+hello.dependsOn {
+    tasks.findAll { task -> task.name.equals('testCustom') }
+}
+
+jar {
+   manifest {
+      attributes 'Main-Class': 'com.test.Project'
+   }
+}
+dependencies {
+  compile 'junit:junit:4.12'
+  compile 'org.apache.logging.log4j:log4j-1.2-api:2.1'
+  compile 'org.apache.commons:commons-collections4:4.4'
+}
