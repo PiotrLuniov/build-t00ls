@@ -1,0 +1,45 @@
+apply plugin: 'java'
+
+version = '1.0-SNAPSHOT'
+archivesBaseName = 'hello'
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.test.Project'
+        )
+    }
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+
+dependencies {
+	testCompile "junit:junit:4.12"
+	compile "commons-collections:commons-collections:3.2"
+	compile "log4j:log4j:1.2.17"
+}
+
+// test
+task testG {
+	println "Testing..."
+}
+
+task buildG {
+	dependsOn 'testG'
+	clean
+	println "Building..."
+}
+
+task hello {
+	dependsOn 'buildG'
+    doLast {
+    println "Hello from build.gradle!"
+    }
+}
+
+
+

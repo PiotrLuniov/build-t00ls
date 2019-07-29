@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.test.UnitTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-07-29T16:50:09" hostname="EPBYMINW6229.minsk.epam.com" time="0.009">
+  <properties/>
+  <testcase name="test" classname="com.test.UnitTest" time="0.009"/>
+  <testcase name="testAppHasAGreeting" classname="com.test.UnitTest" time="0.0"/>
+  <system-out><![CDATA[test
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
