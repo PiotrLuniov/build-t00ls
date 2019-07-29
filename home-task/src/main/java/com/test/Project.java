@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 class Project {
 
  public String getGreeting() {
-        return "Hello, MNT Lab! ";
+        return "Hello, MNT Lab!";
     }
 
   public static void test() {
