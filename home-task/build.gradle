@@ -1,0 +1,42 @@
+apply plugin: 'java'
+  sourceCompatibility = 1.7
+  targetCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+         attributes 'Main-Class': 'com.test.Project'
+    }
+}
+dependencies {
+     compile 'log4j:log4j:1.2.17'
+     testCompile 'junit:junit:4.11'
+      compile 'org.apache.commons:commons-collections4:4.4'
+}
+
+task hello {
+	 
+    doLast {
+        println 'Hello!'
+    }
+}
+task testcustom {
+	doLast {
+        println 'Test custom!'
+    }
+}
+task buildcustom {
+	doLast {
+        println 'Build custom!'
+    }
+}	
+
+
+hello.dependsOn testcustom
+testcustom.dependsOn buildcustom
+hello.shouldRunAfter testcustom	
+
+jar.baseName = 'hbledai_artefact'
