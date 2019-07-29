@@ -1,17 +1,19 @@
-package com.test;
+package test.java.com.test;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import main.java.com.test.Project;
+
 
 public class UnitTest {
-    @Test public void testAppHasAGreeting() {
+    @Test 
+    public void testAppHasAGreeting() {
         Project classUnderTest = new Project();
-        assertNotNull("app should have a greeting",
-                       classUnderTest.getGreeting());
+        assertNotNull(classUnderTest.getGreeting());
     }
 
-   @Test
-   public void test(){
-     Project.test();
-   }
+   // @Test
+   // public void test(){
+   // 		assertNotNull(test());
+   // }
 }
