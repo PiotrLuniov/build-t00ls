@@ -17,13 +17,30 @@ version = '0.1.0'
 description = 'maven-simple-project'
 sourceCompatibility = '1.8'
 
-jar {
-
-jar.baseName = 'test-artefact'
-
-manifest {
-attributes(
-'Main-Class': 'com.mypackage.MyClass'
-)
+task "1build-custom" {
+    doLast {
+        println 'Executing the custom build'
+    }
 }
+
+task "test-custom" {
+    dependsOn '1build-custom'
+    doLast {
+        println "I'm not a default task!"
+    }
+}
+
+task "hello" {
+    dependsOn 'test-custom'
+    doLast {
+        println "I want to clean up before running!"
+    }
+}
+
+jar {
+    jar.baseName = 'test-artefact'
+
+    manifest {
+        attributes 'Main-Class': 'com.test.Project'
+    }
 }
