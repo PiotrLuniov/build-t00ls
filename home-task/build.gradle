@@ -31,4 +31,9 @@ task "hello" {
     }
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.test.Project'
+    }
+}
 
