@@ -22,3 +22,24 @@ dependencies {
     // https://mvnrepository.com/artifact/commons-collections/commons-collections
     compile group: 'commons-collections', name: 'commons-collections', version: '3.2.2'
 }
+
+task hello {
+    doLast {
+        println 'hello'
+    }
+}
+task "test-custom"  {
+    dependsOn('build-custom')
+    doLast {
+        println 'test-custom'
+    }
+}
+
+task "build-custom" {
+
+    doLast {
+        println 'build-custom'
+    }
+}
+hello.dependsOn "test-custom"
+
