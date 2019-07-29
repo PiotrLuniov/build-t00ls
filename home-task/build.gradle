@@ -31,5 +31,7 @@ task hello {
 }
 jar.baseName = 'adalimayeu_artifact'
 
-
+task wrapper(type: Wrapper) {
+    gradleVersion = '5.5.1'
+}
 
