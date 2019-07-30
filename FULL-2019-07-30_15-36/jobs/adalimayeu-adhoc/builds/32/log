@@ -1,0 +1,16 @@
+Started by upstream project "[8mha:////4FdUDDVMGGVzEJU6lJr+oa3XM4IpXe9uzckyo5DVUp1qAAAAph+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyREgYp/az8JP3ElMSczNzEytRS3cTSkvzcxJLUFH0AR0imm88AAAA=[0madalimayeu-automated" build number [8mha:////4LQUaFMjaxWEzkNX4KnGIXK9YJ3almoaQ3Ao7uHr80y+AAAAqB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgYZ/az8JP3ElMSczNzEytRS3cTSkvzcxJLUFH1jCwDY7fif0QAAAA==[0m38
+originally caused by:
+ Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/adalimayeu-adhoc
+No emails were triggered.
+[adalimayeu-adhoc] $ /bin/sh -xe /tmp/jenkins789845119770170790.sh
++ ARTIFACT_NAME=adalimayeu-38.tar.gz
++ cp /opt/jenkins/.jenkins/artifacts/adalimayeu-38.tar.gz .
++ tar -xvf adalimayeu-38.tar.gz
+home-task/build/libs/adalimayeu_artifact.jar
+Archiving artifacts
+Email was triggered for: Always
+Sending email for trigger: Always
+Sending email to: alex.dalimaev@yandex.by
+Finished: SUCCESS

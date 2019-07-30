@@ -1,0 +1,15 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/adalimayeu-adhoc
+No emails were triggered.
+[adalimayeu-adhoc] $ /bin/sh -xe /tmp/jenkins6899586478608844040.sh
++ ARTIFACT_NAME=adalimayeu-32.tar.gz
++ cp /opt/jenkins/.jenkins/artifacts/adalimayeu-32.tar.gz .
++ tar -xvf adalimayeu-32.tar.gz
+home-task/build/libs/adalimayeu_artifact.jar
+Archiving artifacts
+No mail will be sent out, as 'adalimayeu-adhoc #29' does not have a result yet. Please make sure you set a proper result in case of pipeline/build scripts.
+Email was triggered for: Always
+Sending email for trigger: Always
+Sending email to: alex.dalimaev@yandex.by
+Finished: SUCCESS

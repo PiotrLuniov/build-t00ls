@@ -1,0 +1,12 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/adalimayeu-adhoc
+No emails were triggered.
+[adalimayeu-adhoc] $ /bin/sh -xe /tmp/jenkins5835989500301957005.sh
++ ARTIFACT_NAME=adalimayeu-32.tar.gz
++ cp /opt/jenkins/.jenkins/artifacts/adalimayeu-32.tar.gz .
++ tar -xvf adalimayeu-32.tar.gz
+home-task/build/libs/adalimayeu_artifact.jar
+Archiving artifacts
+No emails were triggered.
+Finished: SUCCESS

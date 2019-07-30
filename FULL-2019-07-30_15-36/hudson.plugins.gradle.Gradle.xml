@@ -1,0 +1,11 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson.plugins.gradle.Gradle_-DescriptorImpl plugin="gradle@1.33">
+  <installations>
+    <hudson.plugins.gradle.GradleInstallation>
+      <name>custom_graddle_3.5</name>
+      <home>/opt/jenkins/gradle-3.5</home>
+      <properties/>
+      <gradleHome>/opt/jenkins/gradle-3.5</gradleHome>
+    </hudson.plugins.gradle.GradleInstallation>
+  </installations>
+</hudson.plugins.gradle.Gradle_-DescriptorImpl>

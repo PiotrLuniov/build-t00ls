@@ -1,0 +1,11 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/adalimayeu-adhoc
+[adalimayeu-adhoc] $ /bin/sh -xe /tmp/jenkins377172407374551041.sh
++ ARTIFACT_NAME=adalimayeu-32.tar.gz
++ cp /opt/jenkins/.jenkins/artifacts/adalimayeu-32.tar.gz .
++ tar -xvf adalimayeu-32.tar.gz
+home-task/build/libs/adalimayeu_artifact.jar
+Archiving artifacts
+No mail will be sent out, as 'adalimayeu-adhoc #26' does not have a result yet. Please make sure you set a proper result in case of pipeline/build scripts.
+Finished: SUCCESS

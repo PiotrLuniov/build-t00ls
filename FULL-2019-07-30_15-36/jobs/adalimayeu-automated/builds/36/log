@@ -1,0 +1,107 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/adalimayeu-automated
+Using checkout strategy: Default
+Last Built Revision: Revision 4ff468e5cf093ab6d8ae4cd381c6561d81dff415 (refs/remotes/origin/adalimayeu)
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/MNT-Lab/build-t00ls.git # timeout=10
+Fetching upstream changes from https://github.com/MNT-Lab/build-t00ls.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/MNT-Lab/build-t00ls.git +refs/heads/*:refs/remotes/origin/*
+getCandidateRevisions(false,origin/adalimayeu,,,hudson.plugins.git.util.BuildData@ebffa027[scmName=<null>,remoteUrls=[https://github.com/MNT-Lab/build-t00ls.git],buildsByBranchName={refs/remotes/origin/adalimayeu=Build #35 of Revision 4ff468e5cf093ab6d8ae4cd381c6561d81dff415 (refs/remotes/origin/adalimayeu)},lastBuild=Build #35 of Revision 4ff468e5cf093ab6d8ae4cd381c6561d81dff415 (refs/remotes/origin/adalimayeu)]) considering branches to build
+Qualifying origin/adalimayeu as a branch in repository origin -> refs/remotes/origin/adalimayeu
+Qualifying origin/adalimayeu as a branch in repository origin -> refs/remotes/origin/origin/adalimayeu
+ > git rev-parse refs/remotes/origin/adalimayeu^{commit} # timeout=10
+rev-parse refs/remotes/origin/adalimayeu -> AnyObjectId[4ff468e5cf093ab6d8ae4cd381c6561d81dff415]
+Found a new commit AnyObjectId[4ff468e5cf093ab6d8ae4cd381c6561d81dff415] to be built on refs/remotes/origin/adalimayeu
+ > git rev-parse refs/remotes/origin/origin/adalimayeu^{commit} # timeout=10
+Failed to rev-parse: refs/remotes/origin/origin/adalimayeu
+Checking out Revision 4ff468e5cf093ab6d8ae4cd381c6561d81dff415 (refs/remotes/origin/adalimayeu)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 4ff468e5cf093ab6d8ae4cd381c6561d81dff415
+Commit message: "6th"
+ > git rev-list --no-walk 4ff468e5cf093ab6d8ae4cd381c6561d81dff415 # timeout=10
+[adalimayeu-automated] $ /bin/sh -xe /tmp/jenkins3873154531387071632.sh
++ mkdir test
++ for i in '{1..10}'
++ touch test/file1
++ for i in '{1..10}'
++ touch test/file2
++ for i in '{1..10}'
++ touch test/file3
++ for i in '{1..10}'
++ touch test/file4
++ for i in '{1..10}'
++ touch test/file5
++ for i in '{1..10}'
++ touch test/file6
++ for i in '{1..10}'
++ touch test/file7
++ for i in '{1..10}'
++ touch test/file8
++ for i in '{1..10}'
++ touch test/file9
++ for i in '{1..10}'
++ touch test/file10
++ for i in '{1..10}'
++ echo file1
++ for i in '{1..10}'
++ echo file2
++ for i in '{1..10}'
++ echo file3
++ for i in '{1..10}'
++ echo file4
++ for i in '{1..10}'
++ echo file5
++ for i in '{1..10}'
++ echo file6
++ for i in '{1..10}'
++ echo file7
++ for i in '{1..10}'
++ echo file8
++ for i in '{1..10}'
++ echo file9
++ for i in '{1..10}'
++ echo file10
++ tar rvf test-36.tar.gz test
+test/
+test/file1
+test/file2
+test/file3
+test/file4
+test/file5
+test/file6
+test/file7
+test/file8
+test/file9
+test/file10
++ rm -rf test
+[Gradle] - Launching build.
+[home-task] $ /opt/jenkins/gradle-3.5/bin/gradle clean build -b build.gradle
+[8mha:////4GZagrBUrrshDIxzZ8taF1rEZ0gexgzpOGI4uLCHfKMUAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:clean
+[8mha:////4GZagrBUrrshDIxzZ8taF1rEZ0gexgzpOGI4uLCHfKMUAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileJava
+[8mha:////4GZagrBUrrshDIxzZ8taF1rEZ0gexgzpOGI4uLCHfKMUAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processResources
+[8mha:////4GZagrBUrrshDIxzZ8taF1rEZ0gexgzpOGI4uLCHfKMUAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:classes
+[8mha:////4GZagrBUrrshDIxzZ8taF1rEZ0gexgzpOGI4uLCHfKMUAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:jar
+[8mha:////4GZagrBUrrshDIxzZ8taF1rEZ0gexgzpOGI4uLCHfKMUAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:assemble
+[8mha:////4GZagrBUrrshDIxzZ8taF1rEZ0gexgzpOGI4uLCHfKMUAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:compileTestJava
+[8mha:////4GZagrBUrrshDIxzZ8taF1rEZ0gexgzpOGI4uLCHfKMUAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:processTestResources NO-SOURCE
+[8mha:////4GZagrBUrrshDIxzZ8taF1rEZ0gexgzpOGI4uLCHfKMUAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:testClasses
+[8mha:////4GZagrBUrrshDIxzZ8taF1rEZ0gexgzpOGI4uLCHfKMUAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:test
+[8mha:////4GZagrBUrrshDIxzZ8taF1rEZ0gexgzpOGI4uLCHfKMUAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:check
+[8mha:////4GZagrBUrrshDIxzZ8taF1rEZ0gexgzpOGI4uLCHfKMUAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m:build
+
+[8mha:////4IkdvypB934STSYZjnUSfcKfv8V50tPyqlfyUfZ1VAADAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpNbNmqZ4mHPZIiYGhooiBimoruT8vOJ8oHJnCA1SyAABjCCFBQBI197DZQAAAA==[0mBUILD SUCCESSFUL
+
+Total time: 1.181 secs
+Build step 'Invoke Gradle script' changed build result to SUCCESS
+[adalimayeu-automated] $ /bin/sh -xe /tmp/jenkins4375335399642488653.sh
++ tar czvf adalimayeu-36.tar.gz home-task/build/libs/adalimayeu_artifact.jar
+home-task/build/libs/adalimayeu_artifact.jar
+Copied 1 artifact from "[8mha:////4A1XrvkgEwl4rN/1peDqhWlWOlsZ4rQiQ9YZnLyTW7d/AAAAmx+LCAAAAAAAAP9b85aBtbiIQSajNKU4P08vOT+vOD8nVc+jsiC1KCczL9svvyTVzHb1RttJBUeZGJg8GdhyUvPSSzJ8GJhLi3JKGIR8shLLEvVzEvPS9YNLijLz0q0rihik0IxzhtAgwxgggJGJgaGiAMgQKWGQ0s/KT9JPTEnMycxNrEwt1U0sLcnPTSxJTdEHAI7LKdKfAAAA[0madalimayeu-automated" build number [8mha:////4OwxVq8a81LJnVSxulRhgg+013QttHhnaxRZw4uulSqKAAAAnh+LCAAAAAAAAP9b85aBtbiIQSajNKU4P08vOT+vOD8nVc+jsiC1KCczL9svvyTVzHb1RttJBUeZGJg8GdhyUvPSSzJ8GJhLi3JKGIR8shLLEvVzEvPS9YNLijLz0q0rihik0IxzhtAgwxgggJGJgaGiAMhgKmGQ1c/KT9JPTEnMycxNrEwt1U0sLcnPTSxJTdE3NtUHACUVXYuiAAAA[0m35
+Archiving artifacts
+[parameterized-trigger] Current build has no parameters.
+[parameterized-trigger] Downstream builds will not be triggered as no parameter is set.
+Finished: SUCCESS
