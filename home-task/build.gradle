@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.apache.logging.log4j:log4j-1.2-api:2.11.0'
+    compile 'commons-collections:commons-collections:3.0'
+    compile 'junit:junit:4.12'
+}
+
+group = 'com.mnt.training'
+version = '0.1.0'
+description = 'maven-simple-project'
+sourceCompatibility = '1.8'
+
+task "1build-custom" {
+    doLast {
+        println 'Executing the custom build'
+    }
+}
+
+task "test-custom" {
+    dependsOn '1build-custom'
+    doLast {
+        println "I'm not a default task!"
+    }
+}
+
+task "hello" {
+    dependsOn 'test-custom'
+    doLast {
+        println "I want to clean up before running!"
+    }
+}
+
+jar {
+    jar.baseName = 'test-artefact'
+
+    manifest {
+        attributes 'Main-Class': 'com.test.Project'
+    }
+}
