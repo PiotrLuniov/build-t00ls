@@ -1,0 +1,4 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.maven__artifact__choicelistprovider.nexus.NexusChoiceListProvider_-NexusDescriptorImpl plugin="maven-artifact-choicelistprovider@1.5.1">
+  <useRestfulAPI>false</useRestfulAPI>
+</org.jenkinsci.plugins.maven__artifact__choicelistprovider.nexus.NexusChoiceListProvider_-NexusDescriptorImpl>

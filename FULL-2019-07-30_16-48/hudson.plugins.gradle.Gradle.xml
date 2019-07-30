@@ -1,0 +1,25 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson.plugins.gradle.Gradle_-DescriptorImpl plugin="gradle@1.33">
+  <installations>
+    <hudson.plugins.gradle.GradleInstallation>
+      <name>local gradle</name>
+      <home>/opt/gradle-3.5</home>
+      <properties/>
+      <gradleHome>/opt/gradle-3.5</gradleHome>
+    </hudson.plugins.gradle.GradleInstallation>
+    <hudson.plugins.gradle.GradleInstallation>
+      <name></name>
+      <home></home>
+      <properties>
+        <hudson.tools.InstallSourceProperty>
+          <installers>
+            <hudson.plugins.gradle.GradleInstaller>
+              <id>5.6-rc-1</id>
+            </hudson.plugins.gradle.GradleInstaller>
+          </installers>
+        </hudson.tools.InstallSourceProperty>
+      </properties>
+      <gradleHome></gradleHome>
+    </hudson.plugins.gradle.GradleInstallation>
+  </installations>
+</hudson.plugins.gradle.Gradle_-DescriptorImpl>

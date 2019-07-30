@@ -1,0 +1,37 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<jp.ikedam.jenkins.plugins.extensible__choice__parameter.ExtensibleChoiceParameterDefinition_-DescriptorImpl plugin="extensible-choice-parameter@1.6.0">
+  <choiceListEnabledMap>
+    <entry>
+      <string>org.jenkinsci.plugins.maven_artifact_choicelistprovider.artifactory.ArtifactoryChoiceListProvider</string>
+      <boolean>true</boolean>
+    </entry>
+    <entry>
+      <string>org.jenkinsci.plugins.maven_artifact_choicelistprovider.nexus.NexusChoiceListProvider</string>
+      <boolean>true</boolean>
+    </entry>
+    <entry>
+      <string>org.jenkinsci.plugins.maven_artifact_choicelistprovider.nexus3.Nexus3ChoiceListProvider</string>
+      <boolean>true</boolean>
+    </entry>
+    <entry>
+      <string>jp.ikedam.jenkins.plugins.extensible_choice_parameter.TextareaChoiceListProvider</string>
+      <boolean>true</boolean>
+    </entry>
+    <entry>
+      <string>jp.ikedam.jenkins.plugins.extensible_choice_parameter.FilenameChoiceListProvider</string>
+      <boolean>true</boolean>
+    </entry>
+    <entry>
+      <string>jp.ikedam.jenkins.plugins.extensible_choice_parameter.GlobalTextareaChoiceListProvider</string>
+      <boolean>true</boolean>
+    </entry>
+    <entry>
+      <string>org.jenkinsci.plugins.maven_artifact_choicelistprovider.central.MavenCentralChoiceListProvider</string>
+      <boolean>true</boolean>
+    </entry>
+    <entry>
+      <string>jp.ikedam.jenkins.plugins.extensible_choice_parameter.SystemGroovyChoiceListProvider</string>
+      <boolean>true</boolean>
+    </entry>
+  </choiceListEnabledMap>
+</jp.ikedam.jenkins.plugins.extensible__choice__parameter.ExtensibleChoiceParameterDefinition_-DescriptorImpl>
