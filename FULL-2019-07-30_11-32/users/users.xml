@@ -1,0 +1,14 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<hudson.model.UserIdMapper>
+  <version>1</version>
+  <idToDirectoryNameMap class="concurrent-hash-map">
+    <entry>
+      <string>anton.butsko</string>
+      <string>antonbutsko_7728908457600647924</string>
+    </entry>
+    <entry>
+      <string>abutsko</string>
+      <string>abutsko_978274475095732811</string>
+    </entry>
+  </idToDirectoryNameMap>
+</hudson.model.UserIdMapper>

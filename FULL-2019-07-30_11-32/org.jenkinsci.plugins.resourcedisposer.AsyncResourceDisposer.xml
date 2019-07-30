@@ -1,0 +1,25 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer plugin="resource-disposer@0.13">
+  <id>AsyncResourceDisposer</id>
+  <backlog class="java.util.Collections$SetFromMap" serialization="custom">
+    <unserializable-parents/>
+    <java.util.Collections_-SetFromMap>
+      <default>
+        <m class="concurrent-hash-map">
+          <entry>
+            <org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
+              <disposer reference="../../../../../../.."/>
+              <disposable class="hudson.plugins.ws_cleanup.Wipeout$DisposableImpl" plugin="ws-cleanup@0.37">
+                <node></node>
+                <path>/opt/jenkins/artifacts_ws-cleanup_1564485623918</path>
+              </disposable>
+              <registered>2019-07-30 11:20:23.919 UTC</registered>
+              <disposableInfo>hudson.plugins.ws_cleanup.Wipeout$DisposableImpl:Workspace master:/opt/jenkins/artifacts_ws-cleanup_1564485623918</disposableInfo>
+            </org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer_-WorkItem>
+            <boolean>true</boolean>
+          </entry>
+        </m>
+      </default>
+    </java.util.Collections_-SetFromMap>
+  </backlog>
+</org.jenkinsci.plugins.resourcedisposer.AsyncResourceDisposer>

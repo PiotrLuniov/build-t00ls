@@ -1,0 +1,35 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<scriptApproval plugin="script-security@1.61">
+  <approvedScriptHashes>
+    <string>017d0db438428731cd600b6ebda805065433520f</string>
+    <string>24d35ae925af3d009d614719653211874fb8465b</string>
+    <string>34f1146b23dbaed55c156bf1541aa0f0094144eb</string>
+    <string>52151d3513b1beb9a4285353954b7a3688ffc3d1</string>
+    <string>54e28f4404f46f78ff7a54ffa7d623dc7c3060c5</string>
+    <string>5868a5ac6f3418942c6312ca412816ebf451a311</string>
+    <string>58dbd0d5e2b11847c6f7db319f54d2fc0953ec1a</string>
+    <string>65657fde470c8918d707ef52cb7dcc7a0c015ad7</string>
+    <string>745746eeb661d780f1b36d7c25ae59402e32b301</string>
+    <string>d757f8c00398d1a1c54a51b47fc1d9fd24ca4b47</string>
+    <string>e443a9237713ecba20ee3bab40237cdd03d0efc1</string>
+    <string>e5de6332ce759e533870df172e743526f95e1be4</string>
+    <string>f3006c5f0d61e37279aad98773e8481ecc7ac4d1</string>
+  </approvedScriptHashes>
+  <approvedSignatures/>
+  <aclApprovedSignatures/>
+  <approvedClasspathEntries/>
+  <pendingScripts/>
+  <pendingSignatures>
+    <pendingSignature>
+      <context/>
+      <signature>method groovy.lang.GroovyObject invokeMethod java.lang.String java.lang.Object</signature>
+      <dangerous>true</dangerous>
+    </pendingSignature>
+    <pendingSignature>
+      <context/>
+      <signature>method groovy.lang.Script println java.lang.Object</signature>
+      <dangerous>false</dangerous>
+    </pendingSignature>
+  </pendingSignatures>
+  <pendingClasspathEntries/>
+</scriptApproval>
