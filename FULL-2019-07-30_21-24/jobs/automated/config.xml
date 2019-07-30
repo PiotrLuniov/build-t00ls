@@ -1,0 +1,106 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description>automated task5</description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>2</daysToKeep>
+        <numToKeep>10</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+  </properties>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.11.0">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/MNT-Lab/build-t00ls.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/ashamchonak</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.plugins.gradle.Gradle plugin="gradle@1.33">
+      <switches></switches>
+      <tasks>build</tasks>
+      <rootBuildScriptDir>home-task/</rootBuildScriptDir>
+      <buildFile></buildFile>
+      <gradleName>Gradle 5.5.1</gradleName>
+      <useWrapper>false</useWrapper>
+      <makeExecutable>false</makeExecutable>
+      <useWorkspaceAsHome>false</useWorkspaceAsHome>
+      <wrapperLocation></wrapperLocation>
+      <passAllAsSystemProperties>false</passAllAsSystemProperties>
+      <projectProperties></projectProperties>
+      <passAllAsProjectProperties>false</passAllAsProjectProperties>
+    </hudson.plugins.gradle.Gradle>
+    <hudson.tasks.Shell>
+      <command>mkdir -p $JENKINS_HOME/artifacts/
+cp -f $WORKSPACE/home-task/build/libs/test-artifact.jar $JENKINS_HOME/artifacts/</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>cd $JENKINS_HOME/artifacts/
+tar -czvf test-artifact-$BUILD_NUMBER.tar.gz test-artifact.jar
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.ArtifactArchiver>
+      <artifacts>home-task/build/libs/test-artifact.jar</artifacts>
+      <allowEmptyArchive>false</allowEmptyArchive>
+      <onlyIfSuccessful>false</onlyIfSuccessful>
+      <fingerprint>false</fingerprint>
+      <defaultExcludes>true</defaultExcludes>
+      <caseSensitive>true</caseSensitive>
+    </hudson.tasks.ArtifactArchiver>
+    <org.jenkinsci.plugins.discardbuild.DiscardBuildPublisher plugin="discard-old-build@1.05">
+      <daysToKeep>2</daysToKeep>
+      <numToKeep>10</numToKeep>
+      <resultsToDiscard/>
+      <minLogFileSize>-1</minLogFileSize>
+      <maxLogFileSize>-1</maxLogFileSize>
+      <intervalDaysToKeep>-1</intervalDaysToKeep>
+      <intervalNumToKeep>-1</intervalNumToKeep>
+      <regexp></regexp>
+    </org.jenkinsci.plugins.discardbuild.DiscardBuildPublisher>
+    <hudson.tasks.junit.JUnitResultArchiver plugin="junit@1.28">
+      <testResults>**/build/test-results/test/*.xml</testResults>
+      <keepLongStdio>false</keepLongStdio>
+      <healthScaleFactor>1.0</healthScaleFactor>
+      <allowEmptyResults>false</allowEmptyResults>
+    </hudson.tasks.junit.JUnitResultArchiver>
+    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.35.2">
+      <configs>
+        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+          <configs>
+            <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+              <properties>unarchives=/opt/jenkins/.jenkins/artifacts/test-artifact-$BUILD_NUMBER.tar.gz</properties>
+              <textParamValueOnNewLine>false</textParamValueOnNewLine>
+            </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+          </configs>
+          <projects>adhoc,</projects>
+          <condition>SUCCESS</condition>
+          <triggerWithNoParameters>false</triggerWithNoParameters>
+          <triggerFromChildProjects>false</triggerFromChildProjects>
+        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+      </configs>
+    </hudson.plugins.parameterizedtrigger.BuildTrigger>
+  </publishers>
+  <buildWrappers/>
+</project>
