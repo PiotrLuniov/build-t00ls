@@ -1,0 +1,89 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: postgresql-pv
+  namespace: jenkins
+spec:
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - jenkins
+  capacity:
+    storage: 2Gi
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: postgresql-storage
+  local:
+    path: /opt/postgresql
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgresql-pvc
+  namespace: jenkins
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: postgresql-storage
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgresql-deployment
+  namespace: jenkins
+  labels:
+    db: postgresql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      db: postgresql
+  template:
+    metadata:
+      labels:
+        db: postgresql
+    spec:
+      containers:
+      - name: postgresql
+        image: postgres:latest
+        env:
+        - name: POSTGRES_USER
+          value: sonar
+        - name: POSTGRES_PASSWORD
+          value: sonar
+        ports:
+        - name: postgresql-port
+          containerPort: 5432
+        volumeMounts:
+        - name: postgresql-data
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: postgresql-data
+        persistentVolumeClaim:
+          claimName: postgresql-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgresql-service
+  namespace: jenkins
+  labels:
+    db: postgresql
+spec:
+  selector:
+    db: postgresql
+  type: ClusterIP
+  ports:
+  - name: postgresql-svc
+    protocol: TCP
+    port: 5432
+    targetPort: postgresql-port
