@@ -1,0 +1,71 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: sonar-data-pv
+spec:
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - master
+  capacity:
+    storage: 600Mi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: sonar-data-storage
+  local:
+    path: /home/vagrant/sonar
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: sonar-data-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: sonar-data-storage
+  resources:
+    requests:
+      storage: 600Mi
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sonar-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sonar
+  template:
+    metadata:
+      labels:
+        app: sonar
+    spec:
+      containers:
+      - name: sonar
+        image: sonarqube:7.1
+        ports:
+        - containerPort: 9000
+        env:
+        - name: SONARQUBE_JDBC_PASSWORD
+          value: sonar
+        - name: SONARQUBE_JDBC_URL
+          value: jdbc:postgresql://postgres/sonar
+        volumeMounts:
+        - name: sonar-data-volume
+          mountPath: /opt/sonarqube/data
+      volumes:
+      - name: sonar-data-volume
+        persistentVolumeClaim:
+          claimName: sonar-data-pvc
+#12345: 0b6ae6e64121bdd0ed68e42f16629df6a158686f
+#Jenkins: 772b079fa9a92b1ac44dd9dfcf74d72757bee3b9
+#sonar 192.168.56.242   9000
+#jenkins http://192.168.56.241:8080
