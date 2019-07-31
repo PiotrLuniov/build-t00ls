@@ -32,6 +32,11 @@ public class HelloWorldServiceImpl implements HelloWorldService {
 
     @Override
     public String sayHello() {
+        System.out.println("I'm a custom message, that wasn't there");
+        if (3 < 5){
+           return "Hello Java!"
+        }
+        else if ( 3 == 5 ) return "Rly?"
         return "Hello World!";
     }
 
