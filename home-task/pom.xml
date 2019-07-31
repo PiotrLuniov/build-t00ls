@@ -36,7 +36,7 @@
 			<configuration>
 			<archive>
 				<manifest>
-					<mainClass>false</mainClass>
+					<mainClass>com.test.Project</mainClass>
 				</manifest>
 			</archive>
 			</configuration>
