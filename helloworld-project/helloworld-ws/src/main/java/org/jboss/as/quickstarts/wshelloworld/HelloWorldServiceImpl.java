@@ -36,7 +36,10 @@ public class HelloWorldServiceImpl implements HelloWorldService {
         if (3 < 5){
            return "Hello Java!"
         }
-        else if ( 3 == 5 ) return "Rly?"
+        int j = 0;
+        for (i = 0; i < 10; j++) {
+            i++;
+        }
         return "Hello World!";
     }
 
