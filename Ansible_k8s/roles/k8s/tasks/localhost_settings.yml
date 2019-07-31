@@ -1,0 +1,32 @@
+
+- name: create docker conf dir
+  file:
+    path: $HOME/.kube
+    state: directory
+
+- name: copy admin
+  copy:
+    src: admin.conf
+    dest: ~/.kube/config
+
+- name: create k8s repo
+  become: yes
+  copy:
+    content: |
+      [kubernetes]
+      name=Kubernetes
+      baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+      enabled=1
+      gpgcheck=1
+      repo_gpgcheck=1
+      gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+    dest: /etc/yum.repos.d/kubernetes.repo
+    
+- name: install k8s
+  become: yes
+  yum:
+    name: 
+      - kubelet
+      - kubeadm
+      - kubectl
+    state: latest

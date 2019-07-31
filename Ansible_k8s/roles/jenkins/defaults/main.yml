@@ -1,0 +1,12 @@
+---
+# defaults file for roles/jenkins
+
+jenkins_mode: "node"
+JENKINS_HOME: "/opt/jenkins"
+WAR_PATH: "/usr/share/jenkins.war"
+
+maven_url: http://ftp.byfly.by/pub/apache.org/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.tar.gz
+grandle_url: https://services.gradle.org/distributions/gradle-3.5-bin.zip
+
+
+

@@ -1,0 +1,171 @@
+---
+# tasks file for roles/jenkins
+
+- debug: msg={{ jenkins_mode }}
+
+- block:
+  - include_role:
+      name: user
+    vars:
+      user_name: jenkins
+
+  # - name: copy ssh key to vagrant directory
+  #   copy:
+  #     src: /home/jenkins/.ssh/id_jenkins_master_rsa.pub
+  #     dest: /vagrant/id_jenkins_master_rsa.pub
+  #     remote_src: yes
+  #     owner: jenkins
+  #     group: jenkins
+
+  - name: download jenkins binary
+    get_url:
+      url: http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+      dest: "{{ WAR_PATH }}"
+      owner: jenkins
+      group: jenkins
+
+  - name: create JENKINS_HOME
+    file:
+      path: "{{ JENKINS_HOME }}"
+      state: directory
+      owner: jenkins
+      group: jenkins
+
+  - name: create jenkins master dir
+    file:
+      path: "{{ JENKINS_HOME }}/jenkins-master"
+      state: directory
+      owner: jenkins
+      group: jenkins
+
+  - name: run jenkins
+    become_user: jenkins
+    shell: |
+      nohup /usr/bin/java -Duser.home={{ JENKINS_HOME }} \
+      -Djenkins.install.runSetupWizard=false \
+      -Djava.awt.headless=true -Dhudson.plugins.git.GitSCM.verbose=true \
+      -Dhttps.protocols=TLSv1.2 \
+      -Dhudson.plugins.parameterizedtrigger.ProjectSpecificParametersActionFactory.compatibility_mode=true \
+      -Dorg.eclipse.jetty.server.Request.maxFormContentSize=5000000 \
+      -Dpermissive-script-security.enabled=true -XX:MaxMetaspaceSize=1g \
+      -XX:+CMSClassUnloadingEnabled -XX:+UseConcMarkSweepGC -XX:+DisableExplicitGC \
+      -Xms1000m -Xmx3000m -Dcom.sun.management.jmxremote.ssl=false \
+      -jar "{{ WAR_PATH }}" &
+
+  - yum:
+      name: git
+      state: present
+
+  - name: download maven 
+    get_url:
+      url: "{{ maven_url }}"
+      dest: "{{ JENKINS_HOME }}"
+      owner: jenkins
+      group: jenkins
+
+  - name: unarchive maven 
+    unarchive:
+      src: "{{ JENKINS_HOME }}/apache-maven-3.6.1-bin.tar.gz"
+      dest: "{{ JENKINS_HOME }}"
+      remote_src: yes
+      owner: jenkins
+      group: jenkins
+
+  - name: Create a symbolic link
+    file:
+      src: /opt/jenkins/apache-maven-3.6.1/
+      dest: /opt/jenkins/maven
+      owner: jenkins
+      group: jenkins
+      state: link
+
+  - name: maven sh
+    become: yes
+    copy:
+      content: |
+        export PATH=/opt/jenkins/maven/bin:${PATH}
+      dest: /etc/profile.d/maven.sh
+
+  - yum:
+      name: unzip
+      state: present
+
+  - name: download gradle 
+    get_url:
+      url: "{{ grandle_url }}"
+      dest: "{{ JENKINS_HOME }}"
+      owner: jenkins
+      group: jenkins
+
+  - name: unarchive gradle 
+    unarchive:
+      src: "{{ JENKINS_HOME }}/gradle-3.5-bin.zip"
+      dest: "{{ JENKINS_HOME }}"
+      remote_src: yes
+      owner: jenkins
+      group: jenkins
+
+  - name: Create a symbolic link
+    file:
+      src: /opt/jenkins/gradle-3.5/
+      dest: /opt/jenkins/maven
+      owner: jenkins
+      group: jenkins
+      state: link
+
+  - name: grandle sh
+    become: yes
+    copy:
+      content: |
+        export PATH=/opt/jenkins/gradle/bin:${PATH}
+      dest: /etc/profile.d/gradle.sh
+
+  when: (jenkins_mode == "node") and
+        (ansible_facts.hostname == "master")
+
+
+
+
+- block:
+
+  - include_role:
+      name: user
+    vars:
+      user_name: jenkins
+
+  - name: create jenkins slave dir
+    file:
+      path: "{{ JENKINS_HOME }}/jenkins-slave"
+      state: directory
+      owner: jenkins
+      group: jenkins
+
+  # - name: set authorized keys
+  #   authorized_key:
+  #     user: jenkins
+  #     state: present
+  #     key:  "{{ lookup('file', 'id_jenkins_master_rsa.pub') }}"
+
+  when: (jenkins_mode == "node") and
+        (ansible_facts.hostname != "master")
+
+
+
+
+
+- block:
+  - name: set nginx config for jenkins
+    copy:
+      content: |
+        server {
+            listen 80;
+            server_name jenkins;
+
+            location / {
+                proxy_pass "http://127.0.0.1:8080";
+            }
+        }
+      dest: /etc/nginx/conf.d/jenkins.conf
+    notify: "restart nginx"
+  when: jenkins_mode == "lb"
+

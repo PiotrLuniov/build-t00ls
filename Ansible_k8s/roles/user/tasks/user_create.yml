@@ -1,0 +1,20 @@
+
+- name: Create group
+  become: yes
+  group:
+    name: "{{ user_group }}"
+    gid: "{{ group_id }}"
+    state: present
+
+- name: Create user
+  become: yes
+  user:
+    name: "{{ user_name }}"
+    group: "{{ user_group }}"
+    uid: "{{ user_id }}"
+    groups: "{{ user_groups }}"
+    home: "{{ user_home }}"
+    create_home: "{{ create_home }}"
+    # generate_ssh_key: yes
+    # ssh_key_bits: 2048
+    # ssh_key_file: .ssh/id_{{ user_name }}_{{ ansible_facts.hostname }}_rsa

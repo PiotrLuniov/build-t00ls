@@ -1,0 +1,134 @@
+- hosts: master:workers
+
+
+# task 2
+# - name: Install Java Jenkins Nginx on master
+#   hosts: master
+#   become: yes
+#   tasks:
+#   - include_role: 
+#       name: java
+#   - include_role: 
+#       name: jenkins
+#   - include_role: 
+#       name: nginx
+#   - include_role: 
+#       name: jenkins
+#     vars:
+#       jenkins_mode: lb
+
+# - name: Install Java Jenkins Nginx on master
+#   hosts: workers
+#   become: yes
+#   tasks:
+#   - include_role: 
+#       name: java
+#   - include_role: 
+#       name: jenkins
+
+
+
+
+# task 3
+- name: install k8s
+  hosts: master:workers
+  become: yes
+  tasks:
+  - include_role:
+      name: k8s
+
+
+- name: install jenkins on k8s
+  hosts: master
+  become: yes
+  tasks:
+  - include_role:
+      name: jenkins_k8s
+    vars:
+      namespace: jenkins
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# - name: jnlp
+#   hosts: master
+#   become: yes
+#   tasks:
+#   - name: create ServiceAccount
+#     shell: |
+#       cat << EOF | kubectl apply -f -
+#       ---
+#       apiVersion: v1
+#       kind: ServiceAccount
+#       metadata:
+#         name: jenkins
+
+#       ---
+#       kind: Role
+#       apiVersion: rbac.authorization.k8s.io/v1beta1
+#       metadata:
+#         name: jenkins
+#       rules:
+#       - apiGroups: [""]
+#         resources: ["pods"]
+#         verbs: ["create","delete","get","list","patch","update","watch"]
+#       - apiGroups: [""]
+#         resources: ["pods/exec"]
+#         verbs: ["create","delete","get","list","patch","update","watch"]
+#       - apiGroups: [""]
+#         resources: ["pods/log"]
+#         verbs: ["get","list","watch"]
+#       - apiGroups: [""]
+#         resources: ["secrets"]
+#         verbs: ["get"]
+
+#       ---
+#       apiVersion: rbac.authorization.k8s.io/v1beta1
+#       kind: RoleBinding
+#       metadata:
+#         name: jenkins
+#       roleRef:
+#         apiGroup: rbac.authorization.k8s.io
+#         kind: Role
+#         name: jenkins
+#       subjects:
+#       - kind: ServiceAccount
+#         name: jenkins
+#       EOF
+#   - name: create ServiceAccount
+#     shell: >
+#       kubectl create clusterrolebinding permissive-binding 
+#       --clusterrole=cluster-admin --user=admin --user=kubelet 
+#       --group=system:serviceaccounts:jenkins
+
+
+
+
+# kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk '{print $1}')
