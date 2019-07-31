@@ -40,6 +40,10 @@ public class HelloWorldServiceImpl implements HelloWorldService {
         for (i = 0; i < 10; j++) {
             i++;
         }
+        int k = 10;
+        while (k < 0){
+          if(k != 10) {System.out.println("k is not 10");}
+        }
         return "Hello World!";
     }
 
