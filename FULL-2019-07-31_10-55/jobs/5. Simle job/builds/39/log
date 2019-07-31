@@ -1,0 +1,7 @@
+Started by timer
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/5. Simle job
+[5. Simle job] $ /bin/sh -xe /tmp/jenkins5807862157754728547.sh
++ echo hello
+hello
+Finished: SUCCESS

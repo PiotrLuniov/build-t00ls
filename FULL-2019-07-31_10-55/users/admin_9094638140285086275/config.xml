@@ -1,0 +1,64 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<user>
+  <version>10</version>
+  <id>admin</id>
+  <fullName>Ramanouski Pavel</fullName>
+  <description></description>
+  <properties>
+    <jenkins.security.ApiTokenProperty>
+      <tokenStore>
+        <tokenList/>
+      </tokenStore>
+    </jenkins.security.ApiTokenProperty>
+    <hudson.plugins.greenballs.ColorBlindProperty plugin="greenballs@1.15">
+      <enabledColorBlindSupport>false</enabledColorBlindSupport>
+    </hudson.plugins.greenballs.ColorBlindProperty>
+    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.2.0">
+      <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
+    </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.23">
+      <emailAddress>mailromanowski@gmail.com</emailAddress>
+    </hudson.tasks.Mailer_-UserProperty>
+    <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.66">
+      <triggers/>
+    </hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty>
+    <jenkins.security.LastGrantedAuthoritiesProperty>
+      <roles>
+        <string>authenticated</string>
+      </roles>
+      <timestamp>1564337748185</timestamp>
+    </jenkins.security.LastGrantedAuthoritiesProperty>
+    <hudson.model.MyViewsProperty>
+      <primaryViewName></primaryViewName>
+      <views>
+        <hudson.model.AllView>
+          <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
+          <name>all</name>
+          <filterExecutors>false</filterExecutors>
+          <filterQueue>false</filterQueue>
+          <properties class="hudson.model.View$PropertyList"/>
+        </hudson.model.AllView>
+      </views>
+    </hudson.model.MyViewsProperty>
+    <org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty plugin="display-url-api@2.3.1">
+      <providerId>default</providerId>
+    </org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty>
+    <hudson.model.PaneStatusProperties>
+      <collapsed/>
+    </hudson.model.PaneStatusProperties>
+    <hudson.security.HudsonPrivateSecurityRealm_-Details>
+      <passwordHash>#jbcrypt:$2a$10$PNsauNI88CzHZAqgHuQPeOxS6KCe4dQtCk.0Ue/Ee8S/dCsUNE3ee</passwordHash>
+    </hudson.security.HudsonPrivateSecurityRealm_-Details>
+    <org.jenkinsci.main.modules.cli.auth.ssh.UserPropertyImpl>
+      <authorizedKeys>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmoQAL5PkjajTl52jvB/z9OgspgaO/E/dUHku1jNyhWRyH2LBYERbsRGrfC/63V92Whbj7bnH8eiz4TgS9LJSeDqpLZghLBTJCFtiItm6w5ztgoWdgOEZDo5C979sGrWi2+TtTZKWuDhzrbRw3GuNtPsTXgB/74ROcGOFvZUdlBze7hc4hCjj5x4C5rmtCmAdh1mncpjHPeQMjx6hPusLboXKSJbWjarlZPMjqRo44Y7CmRj9L0hpLMUS/wCEfE8rVxPmXS4Zqpa+5767ef7DPGIxLdSvWep64rjWAvfiEvrZ0rpUD906jiqHNvCTSGttnfWyQRr2WrGALNGnMK2Nf student@EPBYMINW9143.minsk.epam.com
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCw92NUUX8z+QJCh51+VysKIPgMIDe4TAnaQfe6xw+IlYhuNrQO76/ew6KvMEmpnShWx68yqL8lwsDeCUTIJbS+G2U4FcWB7ztHJ3AfEjt4sq6CrUZoQsBd0pEHAQi6Vi1m+LbHMoxYU9zvd1aIRcUyBRDl7/6nEAxDWRGCCM+Y13S5Pzo/gJFdVD3felP9wPKMDK3gQfDKb+gUxPFyeYd8iReFmdSTUEFUc5O8FfDHKSUhKeZs3oCGkOZb2ajjJtuB25qSWxhot7EDcL3guyJ3362suPAmFo3IRY+67mYqQW2acN/G9mIfDEHUf7vIHsUAgtllPJvEUiU8exUXmjJB student@EPBYMINW9143.minsk.epam.com
+</authorizedKeys>
+    </org.jenkinsci.main.modules.cli.auth.ssh.UserPropertyImpl>
+    <jenkins.security.seed.UserSeedProperty>
+      <seed>5d4efb146ac8a925</seed>
+    </jenkins.security.seed.UserSeedProperty>
+    <hudson.search.UserSearchProperty>
+      <insensitiveSearch>true</insensitiveSearch>
+    </hudson.search.UserSearchProperty>
+  </properties>
+</user>
