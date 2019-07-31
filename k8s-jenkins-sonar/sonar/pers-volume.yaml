@@ -1,0 +1,68 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: localvolum-pv
+spec:
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - master
+  capacity:
+    storage: 100Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  local:
+    path: /opt/data
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: localvolum1-pv
+spec:
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - master
+  capacity:
+    storage: 32Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  local:
+    path: /opt/data-1
+
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: localvolum2-pv
+spec:
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - master
+  capacity:
+    storage: 32Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  local:
+    path: /opt/data-2
