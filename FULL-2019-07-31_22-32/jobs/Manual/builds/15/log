@@ -1,0 +1,14 @@
+Started by user [8mha:////4B32Yr6HU05PpzLqg1lK2Ce76pdD/sEwot0sSW6FB6JKAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYe/dLi1CL9zMrEotJsAMLdYQHBAAAA[0mIlya Yaruk
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/Manual
+[Manual] $ /bin/sh -xe /tmp/jenkins2452732765829737892.sh
++ echo 'Hello world'
++ tar cfvz manual-15.tar.gz hello.log
+hello.log
+Triggering projects: [8mha:////4NnmXc87Jf0peaSks1MT/Pnd+TjgFNbSZ5lb37mDZkmWAAAAkB+LCAAAAAAAAP9b85aBtbiIQSajNKU4P08vOT+vOD8nVc+jsiC1KCczL9svvyTVzHb1RttJBUeZGJg8GdhyUvPSSzJ8GJhLi3JKGIR8shLLEvVzEvPS9YNLijLz0q0rihik0IxzhtAgwxgggJGJgaGiAMjgLGHg18/KT9J3LC3Jz00sSU3RBwAE9Te3lAAAAA==[0mAutomated
+Archiving artifacts
+[ArtifactDeployer] - Starting deployment from the post-action ...
+[ArtifactDeployer] - 1 file(s) have been copied from the '/opt/jenkins/.jenkins/workspace/Manual' to '/opt/jenkins/.jenkins/artifacts'.
+[ArtifactDeployer] - Stopping deployment from the post-action...
+Triggering a new build of [8mha:////4CpB92Y5oohEvQZmhTOCFqxgFMAXEicPbCnuC1n87+BzAAAAmx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgZ+/az8JH3H0pL83MSS1BR9ADMa2PXEAAAA[0mAutomated
+Finished: SUCCESS

@@ -1,0 +1,11 @@
+Started by user [8mha:////4B32Yr6HU05PpzLqg1lK2Ce76pdD/sEwot0sSW6FB6JKAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYe/dLi1CL9zMrEotJsAMLdYQHBAAAA[0mIlya Yaruk
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/Manual
+[Manual] $ /bin/sh -xe /tmp/jenkins5822663592102179378.sh
++ echo 'Hello world'
+Archiving artifacts
+[ArtifactDeployer] - Starting deployment from the post-action ...
+[ArtifactDeployer] - 1 file(s) have been copied from the '/opt/jenkins/.jenkins/workspace/Manual' to '/opt/jenkins/.jenkins/artifacts'.
+[ArtifactDeployer] - Stopping deployment from the post-action...
+Triggering a new build of [8mha:////4CpB92Y5oohEvQZmhTOCFqxgFMAXEicPbCnuC1n87+BzAAAAmx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgZ+/az8JH3H0pL83MSS1BR9ADMa2PXEAAAA[0mAutomated
+Finished: SUCCESS

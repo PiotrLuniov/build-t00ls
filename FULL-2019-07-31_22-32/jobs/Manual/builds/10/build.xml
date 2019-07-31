@@ -1,0 +1,64 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.FileParameterValue>
+          <name>arcifacts</name>
+          <description></description>
+          <originalFileName></originalFileName>
+          <location>arcifacts</location>
+        </hudson.model.FileParameterValue>
+        <hudson.model.StringParameterValue>
+          <name></name>
+          <description></description>
+          <value>hello.log</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>arcifacts</string>
+        <string></string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>iyaruk</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <com.cloudbees.jenkins.plugins.bitbucket.FirstCheckoutCompletedInvisibleAction plugin="cloudbees-bitbucket-branch-source@2.4.5"/>
+    <org.jenkinsci.plugins.artifactdeployer.ArtifactDeployerBuildAction plugin="artifactdeployer@1.2">
+      <owner class="build" reference="../../.."/>
+      <deployedArtifactsInfo>
+        <entry>
+          <int>1264751558</int>
+          <linked-list>
+            <org.jenkinsci.plugins.artifactdeployer.ArtifactDeployerVO>
+              <id>1</id>
+              <fileName>hello.log</fileName>
+              <deployed>true</deployed>
+              <remotePath>/opt/jenkins/.jenkins/artifacts/hello.log</remotePath>
+            </org.jenkinsci.plugins.artifactdeployer.ArtifactDeployerVO>
+          </linked-list>
+        </entry>
+      </deployedArtifactsInfo>
+    </org.jenkinsci.plugins.artifactdeployer.ArtifactDeployerBuildAction>
+  </actions>
+  <queueId>7</queueId>
+  <timestamp>1564599909001</timestamp>
+  <startTime>1564599909010</startTime>
+  <result>SUCCESS</result>
+  <duration>120</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/opt/jenkins/.jenkins/workspace/Manual</workspace>
+  <hudsonVersion>2.176.2</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="com.google.common.collect.EmptyImmutableSortedSet"/>
+</build>
