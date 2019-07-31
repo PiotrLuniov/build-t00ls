@@ -1,1 +1,21 @@
 apply plugin: 'java'
+
+task ('hello') {
+  dependsOn 'test-custom'
+  doLast {
+    println "Hello World!"
+  }
+}
+
+task ('test-custom') {
+  dependsOn 'build-custom'
+  doLast {
+    println "Test custom"
+  }
+}
+
+task ('build-custom') {
+  doLast {
+    println "Build custom"
+  }
+}
