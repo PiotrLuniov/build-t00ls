@@ -59,6 +59,10 @@ public class HelloWorldServiceImpl implements HelloWorldService {
 
     @Override
     public String sayHelloToNames(final List<String> names) {
+        int j;
+	while (true) { 
+  	j++;
+	}
         return "Hello " + createNameListString(names);
     }
 
