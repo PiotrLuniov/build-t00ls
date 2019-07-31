@@ -1,0 +1,47 @@
+Started by user [8mha:////4B32Yr6HU05PpzLqg1lK2Ce76pdD/sEwot0sSW6FB6JKAAAAmB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgYe/dLi1CL9zMrEotJsAMLdYQHBAAAA[0mIlya Yaruk
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/helloworld-iyaruk-gradle-build
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/MNT-Lab/build-t00ls/ # timeout=10
+Fetching upstream changes from https://github.com/MNT-Lab/build-t00ls/
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/MNT-Lab/build-t00ls/ +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/iyaruk^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/iyaruk^{commit} # timeout=10
+Checking out Revision 255b3d565a4c189345ebe761324fe70f623ffc46 (refs/remotes/origin/iyaruk)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 255b3d565a4c189345ebe761324fe70f623ffc46
+Commit message: "day_2"
+ > git rev-list --no-walk 255b3d565a4c189345ebe761324fe70f623ffc46 # timeout=10
+[Gradle] - Launching build.
+[build.gradle] $ /opt/jenkins/.jenkins/tools/hudson.plugins.gradle.GradleInstallation/Gradle_5.5.1/bin/gradle
+FATAL: command execution failed
+java.io.IOException: Cannot run program "/opt/jenkins/.jenkins/tools/hudson.plugins.gradle.GradleInstallation/Gradle_5.5.1/bin/gradle" (in directory "/opt/jenkins/.jenkins/workspace/helloworld-iyaruk-gradle-build/home-task/build.gradle"): error=20, Not a directory
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1048)
+	at hudson.Proc$LocalProc.<init>(Proc.java:250)
+	at hudson.Proc$LocalProc.<init>(Proc.java:219)
+	at hudson.Launcher$LocalLauncher.launch(Launcher.java:937)
+	at hudson.Launcher$ProcStarter.start(Launcher.java:455)
+	at hudson.Launcher$ProcStarter.join(Launcher.java:466)
+	at hudson.plugins.gradle.Gradle.perform(Gradle.java:317)
+	at hudson.tasks.BuildStepMonitor$1.perform(BuildStepMonitor.java:20)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:741)
+	at hudson.model.Build$BuildExecution.build(Build.java:206)
+	at hudson.model.Build$BuildExecution.doRun(Build.java:163)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.run(AbstractBuild.java:504)
+	at hudson.model.Run.execute(Run.java:1818)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:43)
+	at hudson.model.ResourceController.execute(ResourceController.java:97)
+	at hudson.model.Executor.run(Executor.java:429)
+Caused by: java.io.IOException: error=20, Not a directory
+	at java.lang.UNIXProcess.forkAndExec(Native Method)
+	at java.lang.UNIXProcess.<init>(UNIXProcess.java:247)
+	at java.lang.ProcessImpl.start(ProcessImpl.java:134)
+	at java.lang.ProcessBuilder.start(ProcessBuilder.java:1029)
+	... 15 more
+Build step 'Invoke Gradle script' changed build result to FAILURE
+Build step 'Invoke Gradle script' marked build as failure
+Archiving artifacts
+Finished: FAILURE
