@@ -9,6 +9,10 @@ class Project {
         return "Hello, MNT Lab!";
     }
 
+ public String getGreeting() {
+        return "Bye, MNT Lab!";
+    }
+ 
   public static void test() {
     System.out.println("test");
   }
