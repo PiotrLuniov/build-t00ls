@@ -17,6 +17,10 @@ version = '0.1.0'
 description = 'maven-simple-project'
 sourceCompatibility = '1.8'
 
+wrapper {
+    distributionType = Wrapper.DistributionType.ALL
+}
+
 task "1build-custom" {
     doLast {
         println 'Executing my build'
