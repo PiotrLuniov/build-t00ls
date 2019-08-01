@@ -47,6 +47,3 @@ jar {
 
 jar.baseName = 'custom_artefact'
 
-task archive (type: Zip) {
-    archiveFileName = "hello-$BUILD_NUMBER.tar.gz"
-}
