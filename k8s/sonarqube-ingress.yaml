@@ -5,11 +5,14 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  tls:
+  - hosts:
+    - sonar.local
   rules:
-  - host: sonar
+  - host: sonar.local
     http:
       paths:
       - path: /
         backend:
-          serviceName: sonarport
+          serviceName: sonar
           servicePort: 80
