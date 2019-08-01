@@ -9,13 +9,11 @@
     <version>1.0-SNAPSHOT</version>
     <name>maven-home-task</name>
 
-    <distributManagment>
-        <repository>
-            <id>deployment</id>
-            <name>jenkins</name>
-            <url>http://localhost:8081/repository/ArtifactStorage/</url>
-        </repository>
-    </distributManagment>     
+    <snapshotRepository>
+        <id>deployment</id>
+        <name>ArtifactStorage</name>
+        <url>http://localhost:8081/repository/ArtifactStorage/</url>
+    </snapshotRepository>   
     
     <dependencies>
         <!-- https://mvnrepository.com/artifact/junit/junit -->
