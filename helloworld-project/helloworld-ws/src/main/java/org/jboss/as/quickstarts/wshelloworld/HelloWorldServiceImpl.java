@@ -66,6 +66,11 @@ public class HelloWorldServiceImpl implements HelloWorldService {
          */
         if (names == null || names.isEmpty()) {
             return "Anonymous!";
+             System.out.println("new string");
+             System.out.println("new string");
+             System.out.println("new string");
+             System.out.println("new string");
+             System.out.println("new string");
         }
 
         final StringBuilder nameBuilder = new StringBuilder();
