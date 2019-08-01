@@ -1,0 +1,137 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nexus-vol-pv-data
+spec:
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - jenkins
+  capacity: 
+    storage: 2Gi
+  accessModes: 
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  local:
+    path: /tmp/nexus
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nexus-vol-pvc-data
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: local-storage
+  resources:
+    requests:
+      storage: 2Gi
+---
+
+
+# apiVersion: v1
+# kind: PersistentVolume
+# metadata:
+#   name: nexus-vol-pv-ext
+# spec:
+#   nodeAffinity:
+#     required:
+#       nodeSelectorTerms:
+#       - matchExpressions:
+#         - key: kubernetes.io/hostname
+#           operator: In
+#           values:
+#           - jenkins
+#   capacity: 
+#     storage: 2Gi
+#   accessModes: 
+#     - ReadWriteOnce
+#   persistentVolumeReclaimPolicy: Retain
+#   storageClassName: local-storage
+#   local:
+#     path: /tmp/nexus/extensions
+# ---
+# apiVersion: v1
+# kind: PersistentVolumeClaim
+# metadata:
+#   name: nexus-vol-pvc-ext
+# spec:
+#   accessModes:
+#   - ReadWriteOnce
+#   storageClassName: local-storage
+#   resources:
+#     requests:
+#       storage: 2Gi
+# ---
+
+# apiVersion: v1
+# kind: Secret
+# metadata:
+#   name: postgres
+# type: Opaque
+# data:
+#   password: c29uYXI=
+# ---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: nexus-dep
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: nexus
+    spec:
+      containers:
+      - name: nexus
+        image: sonatype/nexus3:latest
+        ports:
+        - name: nexus-port1
+          containerPort: 8081
+        volumeMounts:
+        - name: nexus-data
+          mountPath: /nexus-data
+      volumes:
+      - name: nexus-data
+        persistentVolumeClaim:
+          claimName: nexus-vol-pvc-data
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: nexus-svc
+spec:
+  selector:
+    app: nexus
+  type: LoadBalancer
+  ports:
+  - name: nexus-svc-port1
+    port: 80
+    targetPort: nexus-port1
+
+---
+
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-nexus
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: nexus
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nexus-svc
+          servicePort: nexus-svc-port1
