@@ -13,7 +13,7 @@
         <snapshotRepository>
             <id>deployment</id>
             <name>ArtifactStorage</name>
-            <url>http://localhost:8081/repository/ArtifactStorage-Snap/</url>
+            <url>http://10.6.144.76:8081/repository/ArtifactStorage-Snap/</url>
         </snapshotRepository>   
     </distributionManagement> 
 
