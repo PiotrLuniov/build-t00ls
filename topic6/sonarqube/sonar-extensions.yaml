@@ -1,0 +1,37 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: sonar-extensions
+  labels:
+    type: local
+    app: sonar
+spec:
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - jenkins
+  storageClassName: default
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/opt/sonarqube/extensions/"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: sonar-extensions-pvc
+  labels:
+    app: sonar
+spec:
+  accessModes:
+  - ReadWriteOnce
+  storageClassName: default
+  resources:
+    requests:
+      storage: 10Gi
