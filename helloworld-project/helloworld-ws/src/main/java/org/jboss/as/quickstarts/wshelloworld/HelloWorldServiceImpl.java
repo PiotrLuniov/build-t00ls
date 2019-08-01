@@ -71,6 +71,11 @@ public class HelloWorldServiceImpl implements HelloWorldService {
              System.out.println("new string");
              System.out.println("new string");
              System.out.println("new string");
+            
+            
+            
+            
+            
         }
 
         final StringBuilder nameBuilder = new StringBuilder();
@@ -91,4 +96,10 @@ public class HelloWorldServiceImpl implements HelloWorldService {
 
         return nameBuilder.toString();
     }
+    public void infiniteLoopUsingWhile() {
+    while (true) {
+        
+       System.out.println("CI-CD course the best of the best!");
+    }
+}
 }
