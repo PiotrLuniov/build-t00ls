@@ -38,12 +38,10 @@ task "hello" {
 }
 
 jar {
-    jar.baseName = 'test-artefact'
+    jar.baseName = 'custom-artefact'
 
     manifest {
         attributes 'Main-Class': 'com.test.Project'
     }
 }
-
-jar.baseName = 'custom_artefact'
 
