@@ -61,10 +61,6 @@ public interface HelloWorldService {
     
     
     
-    System.out.println("new string");
-    System.out.println("new string");
-    System.out.println("new string");
-    System.out.println("new string");
-    System.out.println("new string");
+
     
 }
