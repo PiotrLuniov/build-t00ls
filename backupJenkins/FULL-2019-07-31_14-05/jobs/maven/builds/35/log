@@ -1,0 +1,82 @@
+Started by timer
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/maven
+Using checkout strategy: Default
+Last Built Revision: Revision ac3a5d19de4aaf554b45c2b22860cf5314890824 (refs/remotes/origin/kshevchenko)
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/MNT-Lab/build-t00ls.git # timeout=10
+Fetching upstream changes from https://github.com/MNT-Lab/build-t00ls.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/MNT-Lab/build-t00ls.git +refs/heads/*:refs/remotes/origin/*
+getCandidateRevisions(false,origin/kshevchenko,,,hudson.plugins.git.util.BuildData@9f35a3e0[scmName=<null>,remoteUrls=[https://github.com/MNT-Lab/build-t00ls.git],buildsByBranchName={refs/remotes/origin/kshevchenko=Build #34 of Revision ac3a5d19de4aaf554b45c2b22860cf5314890824 (refs/remotes/origin/kshevchenko)},lastBuild=Build #34 of Revision ac3a5d19de4aaf554b45c2b22860cf5314890824 (refs/remotes/origin/kshevchenko)]) considering branches to build
+Qualifying origin/kshevchenko as a branch in repository origin -> refs/remotes/origin/kshevchenko
+Qualifying origin/kshevchenko as a branch in repository origin -> refs/remotes/origin/origin/kshevchenko
+ > git rev-parse refs/remotes/origin/kshevchenko^{commit} # timeout=10
+rev-parse refs/remotes/origin/kshevchenko -> AnyObjectId[ac3a5d19de4aaf554b45c2b22860cf5314890824]
+Found a new commit AnyObjectId[ac3a5d19de4aaf554b45c2b22860cf5314890824] to be built on refs/remotes/origin/kshevchenko
+ > git rev-parse refs/remotes/origin/origin/kshevchenko^{commit} # timeout=10
+Failed to rev-parse: refs/remotes/origin/origin/kshevchenko
+Checking out Revision ac3a5d19de4aaf554b45c2b22860cf5314890824 (refs/remotes/origin/kshevchenko)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f ac3a5d19de4aaf554b45c2b22860cf5314890824
+Commit message: "MNT-CD-3 minor changes"
+ > git rev-list --no-walk ac3a5d19de4aaf554b45c2b22860cf5314890824 # timeout=10
+[maven] $ /opt/maven/bin/mvn -f home-task/pom.xml
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.project.app:my-project >---------------------
+[INFO] Building my-project 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ my-project ---
+[8mha:////4F6niKapYwmuO5yxELOw05jMRyEcCtCzB7wtWUy05dmkAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ my-project ---
+[INFO] Changes detected - recompiling the module!
+[8mha:////4F6niKapYwmuO5yxELOw05jMRyEcCtCzB7wtWUy05dmkAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /opt/jenkins/.jenkins/workspace/maven/home-task/target/classes
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ my-project ---
+[8mha:////4F6niKapYwmuO5yxELOw05jMRyEcCtCzB7wtWUy05dmkAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /opt/jenkins/.jenkins/workspace/maven/home-task/src/test/resources
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ my-project ---
+[INFO] Changes detected - recompiling the module!
+[8mha:////4F6niKapYwmuO5yxELOw05jMRyEcCtCzB7wtWUy05dmkAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /opt/jenkins/.jenkins/workspace/maven/home-task/target/test-classes
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ my-project ---
+[INFO] Surefire report directory: /opt/jenkins/.jenkins/workspace/maven/home-task/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.test.UnitTest
+test
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 sec
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ my-project ---
+[INFO] Building jar: /opt/jenkins/.jenkins/workspace/maven/home-task/target/my-project-1.0-SNAPSHOT.jar
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-install-plugin:2.4:install (default-install) @ my-project ---
+[INFO] Installing /opt/jenkins/.jenkins/workspace/maven/home-task/target/my-project-1.0-SNAPSHOT.jar to /home/jenkins/.m2/repository/com/project/app/my-project/1.0-SNAPSHOT/my-project-1.0-SNAPSHOT.jar
+[INFO] Installing /opt/jenkins/.jenkins/workspace/maven/home-task/pom.xml to /home/jenkins/.m2/repository/com/project/app/my-project/1.0-SNAPSHOT/my-project-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.048 s
+[INFO] Finished at: 2019-07-30T15:28:04Z
+[INFO] ------------------------------------------------------------------------
+[maven] $ /bin/sh /tmp/jenkins3096537522167445289.sh
+mkdir: cannot create directory ‘/opt/jenkins/.jenkins/artifacts1’: File exists
+Archiving artifacts
+Recording fingerprints
+Finished: SUCCESS

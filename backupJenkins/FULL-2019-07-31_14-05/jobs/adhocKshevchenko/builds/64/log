@@ -1,0 +1,12 @@
+Started by upstream project "[8mha:////4IVHT+AkoJ7s8OBZCiqiYiYZe6ybvjJxs2qOHWMOUiNUAAAApx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzREgZp/az8JP3E0pL83MSS1JT47OKM1LLkjNS87Hx9AL19vhDQAAAA[0mautomated_kshevchenko" build number [8mha:////4LDcWAaL92m5X9AzOd305Lgwqq98taQLF1+K1YvfOOSNAAAAqR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAymEgZZ/az8JP3E0pL83MSS1JT47OKM1LLkjNS87Hx9MwsAhU1MT9IAAAA=[0m68
+originally caused by:
+ Started by timer
+Running as SYSTEM
+Building on master in workspace /opt/jenkins/.jenkins/workspace/adhocKshevchenko
+[adhocKshevchenko] $ /bin/sh -xe /tmp/jenkins4244058671366357043.sh
++ mkdir /opt/jenkins/.jenkins/64
++ tar xvf /opt/jenkins/.jenkins/artifacts/hello-68.tar.gz -C /opt/jenkins/.jenkins/64
+home-task/target/my-project-1.0-SNAPSHOT.jar
++ rm -rf /opt/jenkins/.jenkins/artifacts/hello-68.tar.gz
++ mv /opt/jenkins/.jenkins/64/home-task/target/my-project-1.0-SNAPSHOT.jar /opt/jenkins/.jenkins/64/64.jar
+Finished: SUCCESS

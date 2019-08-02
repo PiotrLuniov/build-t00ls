@@ -1,0 +1,6 @@
+Started by user [8mha:////4C/wS0MbZ+caEp/L61M4cvKV9CxC8Dt+Be05lCbDAiSNAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building on master in workspace /opt/jenkins/.jenkins/workspace/Job1
+[Job1] $ /bin/sh -xe /tmp/jenkins8836774168775003836.sh
++ sleep 60
+Finished: SUCCESS

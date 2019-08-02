@@ -1,0 +1,31 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<result plugin="junit@1.28">
+  <suites>
+    <suite>
+      <file>/opt/jenkins/.jenkins/workspace/automated_kshevchenko/home-task/target/surefire-reports/TEST-com.test.UnitTest.xml</file>
+      <name>com.test.UnitTest</name>
+      <duration>0.009</duration>
+      <time>0.009</time>
+      <enclosingBlocks/>
+      <enclosingBlockNames/>
+      <cases>
+        <case>
+          <duration>0.009</duration>
+          <className>com.test.UnitTest</className>
+          <testName>test</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>0.0</duration>
+          <className>com.test.UnitTest</className>
+          <testName>testAppHasAGreeting</testName>
+          <skipped>false</skipped>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+  </suites>
+  <duration>0.009</duration>
+  <keepLongStdio>false</keepLongStdio>
+</result>

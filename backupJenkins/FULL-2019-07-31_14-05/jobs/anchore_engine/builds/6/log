@@ -1,0 +1,40 @@
+Started by user [8mha:////4C/wS0MbZ+caEp/L61M4cvKV9CxC8Dt+Be05lCbDAiSNAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/111111
+Using checkout strategy: Default
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/anchore/anchore-engine.git
+ > git init /opt/jenkins/.jenkins/workspace/111111 # timeout=10
+Fetching upstream changes from https://github.com/anchore/anchore-engine.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/anchore/anchore-engine.git +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/anchore/anchore-engine.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/anchore/anchore-engine.git # timeout=10
+Fetching upstream changes from https://github.com/anchore/anchore-engine.git
+ > git fetch --tags --progress https://github.com/anchore/anchore-engine.git +refs/heads/*:refs/remotes/origin/*
+getCandidateRevisions(false,origin/master,,,hudson.plugins.git.util.BuildData@1863364a[scmName=<null>,remoteUrls=[https://github.com/anchore/anchore-engine.git],buildsByBranchName={},lastBuild=null]) considering branches to build
+Qualifying origin/master as a branch in repository origin -> refs/remotes/origin/master
+Qualifying origin/master as a branch in repository origin -> refs/remotes/origin/origin/master
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+rev-parse refs/remotes/origin/master -> AnyObjectId[c87d65032138dfca898a1f7e0e495e6e6e6b7d57]
+Found a new commit AnyObjectId[c87d65032138dfca898a1f7e0e495e6e6e6b7d57] to be built on refs/remotes/origin/master
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Failed to rev-parse: refs/remotes/origin/origin/master
+Checking out Revision c87d65032138dfca898a1f7e0e495e6e6e6b7d57 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f c87d65032138dfca898a1f7e0e495e6e6e6b7d57
+Commit message: "Update circleci config"
+First time build. Skipping changelog.
+[111111] $ /bin/sh -xe /tmp/jenkins7529495387911819854.sh
++ git clone git@github.com:anchore/anchore-engine.git
+Cloning into 'anchore-engine'...
+Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+Build step 'Execute shell' marked build as failure
+Archiving artifacts
+Finished: FAILURE

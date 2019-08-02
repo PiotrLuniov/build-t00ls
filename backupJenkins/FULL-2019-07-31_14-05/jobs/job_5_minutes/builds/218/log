@@ -1,0 +1,9 @@
+Started by timer
+Running as SYSTEM
+Building on master in workspace /opt/jenkins/.jenkins/workspace/job_5_minutes
+[job_5_minutes] $ /bin/sh -xe /tmp/jenkins552607107800315292.sh
++ ls -la
+total 0
+drwxr-xr-x  2 jenkins jenkins   6 Jul 28 17:03 .
+drwxr-xr-x 16 jenkins jenkins 245 Jul 30 20:47 ..
+Finished: SUCCESS

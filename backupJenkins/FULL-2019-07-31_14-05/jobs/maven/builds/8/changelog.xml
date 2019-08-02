@@ -1,0 +1,11 @@
+commit e0f381e87ad1402b56720709233c0b3f843d9fdd
+tree 69f09caaa91fe5fe471f6fb2b22699501b4d062e
+parent 5a479dbaf112d3bafa419538f378baa39740a7a7
+author Kirill Shevchenko <kirill_shevchenko1@epam.com> 2019-07-29 16:15:53 +0300
+committer Kirill Shevchenko <kirill_shevchenko1@epam.com> 2019-07-29 16:15:53 +0300
+
+    pom.xml - add goal
+
+
+
+:100644 100644 73f2026c1c58458cfff97405f5fd8c67f658d7fa e1ea9629f69a5a46aeff160ea4ec3f9b7d3f4dc2 M	home-task/pom.xml

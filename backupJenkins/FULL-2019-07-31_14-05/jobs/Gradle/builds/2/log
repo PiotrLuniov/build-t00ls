@@ -1,0 +1,48 @@
+Started by user [8mha:////4C/wS0MbZ+caEp/L61M4cvKV9CxC8Dt+Be05lCbDAiSNAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/Gradle
+Using checkout strategy: Default
+Last Built Revision: Revision a83bff97cd3fd09ab2966d01d9e38648aede4aa4 (refs/remotes/origin/kshevchenko)
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/MNT-Lab/build-t00ls.git # timeout=10
+Fetching upstream changes from https://github.com/MNT-Lab/build-t00ls.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/MNT-Lab/build-t00ls.git +refs/heads/*:refs/remotes/origin/*
+getCandidateRevisions(false,origin/kshevchenko,,,hudson.plugins.git.util.BuildData@2a092790[scmName=<null>,remoteUrls=[https://github.com/MNT-Lab/build-t00ls.git],buildsByBranchName={refs/remotes/origin/kshevchenko=Build #1 of Revision a83bff97cd3fd09ab2966d01d9e38648aede4aa4 (refs/remotes/origin/kshevchenko)},lastBuild=Build #1 of Revision a83bff97cd3fd09ab2966d01d9e38648aede4aa4 (refs/remotes/origin/kshevchenko)]) considering branches to build
+Qualifying origin/kshevchenko as a branch in repository origin -> refs/remotes/origin/kshevchenko
+Qualifying origin/kshevchenko as a branch in repository origin -> refs/remotes/origin/origin/kshevchenko
+ > git rev-parse refs/remotes/origin/kshevchenko^{commit} # timeout=10
+rev-parse refs/remotes/origin/kshevchenko -> AnyObjectId[a83bff97cd3fd09ab2966d01d9e38648aede4aa4]
+Found a new commit AnyObjectId[a83bff97cd3fd09ab2966d01d9e38648aede4aa4] to be built on refs/remotes/origin/kshevchenko
+ > git rev-parse refs/remotes/origin/origin/kshevchenko^{commit} # timeout=10
+Failed to rev-parse: refs/remotes/origin/origin/kshevchenko
+Checking out Revision a83bff97cd3fd09ab2966d01d9e38648aede4aa4 (refs/remotes/origin/kshevchenko)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f a83bff97cd3fd09ab2966d01d9e38648aede4aa4
+Commit message: "MNT-CD-4 unit 5 + custumartefact"
+ > git rev-list --no-walk a83bff97cd3fd09ab2966d01d9e38648aede4aa4 # timeout=10
+[Gradle] - Launching build.
+[Gradle] $ /opt/gradle/bin/gradle
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+[8mha:////4OO0uh5GVwNjkcC8KHM7kyR9ihNg8zlY77REO4MLSIAIAAAAYB+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUyFJBZn++WXpCqzh62PfDo/h4mBoaKIQQqqJTk/rzgfqNYZQoMUMkAAI0hhAQASWqbMYgAAAA==[0m> Task :help
+
+Welcome to Gradle 5.5.1.
+
+To run a build, run gradle <task> ...
+
+To see a list of available tasks, run gradle tasks
+
+To see a list of command-line options, run gradle --help
+
+To see more detail about a task, run gradle help --task <task>
+
+For troubleshooting, visit https://help.gradle.org
+
+[8mha:////4BDXJTH7KmnUyOKcu4UeXJ2PvqveMi8Q9wR8jwuBrdhCAAAAYx+LCAAAAAAAAP9b85aBtbiIQT2jNKU4P0+vIKc0PTOvWC+9KDElJ1XPHUz5l5Yk5+em+uWXpNbNmqZ4mHPZIiYGhooiBimoruT8vOJ8oHJnCA1SyAABjCCFBQBI197DZQAAAA==[0mBUILD SUCCESSFUL in 18s
+1 actionable task: 1 executed
+Build step 'Invoke Gradle script' changed build result to SUCCESS
+[Gradle] $ /bin/sh /tmp/jenkins5887724349873748094.sh
+Finished: SUCCESS

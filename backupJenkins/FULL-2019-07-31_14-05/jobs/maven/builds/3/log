@@ -1,0 +1,26 @@
+Started by user [8mha:////4C/wS0MbZ+caEp/L61M4cvKV9CxC8Dt+Be05lCbDAiSNAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/maven
+Using checkout strategy: Default
+Last Built Revision: Revision 5a479dbaf112d3bafa419538f378baa39740a7a7 (refs/remotes/origin/kshevchenko)
+No credentials specified
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/MNT-Lab/build-t00ls.git # timeout=10
+Fetching upstream changes from https://github.com/MNT-Lab/build-t00ls.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/MNT-Lab/build-t00ls.git +refs/heads/*:refs/remotes/origin/*
+getCandidateRevisions(false,origin/kshevchenko,,,hudson.plugins.git.util.BuildData@e1161c0[scmName=<null>,remoteUrls=[https://github.com/MNT-Lab/build-t00ls.git],buildsByBranchName={refs/remotes/origin/kshevchenko=Build #2 of Revision 5a479dbaf112d3bafa419538f378baa39740a7a7 (refs/remotes/origin/kshevchenko)},lastBuild=Build #2 of Revision 5a479dbaf112d3bafa419538f378baa39740a7a7 (refs/remotes/origin/kshevchenko)]) considering branches to build
+Qualifying origin/kshevchenko as a branch in repository origin -> refs/remotes/origin/kshevchenko
+Qualifying origin/kshevchenko as a branch in repository origin -> refs/remotes/origin/origin/kshevchenko
+ > git rev-parse refs/remotes/origin/kshevchenko^{commit} # timeout=10
+rev-parse refs/remotes/origin/kshevchenko -> AnyObjectId[5a479dbaf112d3bafa419538f378baa39740a7a7]
+Found a new commit AnyObjectId[5a479dbaf112d3bafa419538f378baa39740a7a7] to be built on refs/remotes/origin/kshevchenko
+ > git rev-parse refs/remotes/origin/origin/kshevchenko^{commit} # timeout=10
+Failed to rev-parse: refs/remotes/origin/origin/kshevchenko
+Checking out Revision 5a479dbaf112d3bafa419538f378baa39740a7a7 (refs/remotes/origin/kshevchenko)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 5a479dbaf112d3bafa419538f378baa39740a7a7
+Commit message: "pom.xml - add plugin section"
+ > git rev-list --no-walk 5a479dbaf112d3bafa419538f378baa39740a7a7 # timeout=10
+Finished: SUCCESS

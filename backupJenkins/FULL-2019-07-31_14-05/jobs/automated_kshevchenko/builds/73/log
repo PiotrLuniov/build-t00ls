@@ -1,0 +1,54 @@
+Started by timer
+Running as SYSTEM
+Building on master in workspace /opt/jenkins/.jenkins/workspace/automated_kshevchenko
+[automated_kshevchenko] $ /opt/maven/bin/mvn -f home-task/pom.xml
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< com.project.app:my-project >---------------------
+[INFO] Building my-project 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ my-project ---
+[8mha:////4F6niKapYwmuO5yxELOw05jMRyEcCtCzB7wtWUy05dmkAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ my-project ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ my-project ---
+[8mha:////4F6niKapYwmuO5yxELOw05jMRyEcCtCzB7wtWUy05dmkAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /opt/jenkins/.jenkins/workspace/automated_kshevchenko/home-task/src/test/resources
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ my-project ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ my-project ---
+[INFO] Surefire report directory: /opt/jenkins/.jenkins/workspace/automated_kshevchenko/home-task/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.test.UnitTest
+test
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 sec
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ my-project ---
+[INFO] 
+[8mha:////4ARoDY5MumtTEXJdEvTcYsJqQlXi2/ccPERQwklkPdXcAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-install-plugin:2.4:install (default-install) @ my-project ---
+[INFO] Installing /opt/jenkins/.jenkins/workspace/automated_kshevchenko/home-task/target/my-project-1.0-SNAPSHOT.jar to /home/jenkins/.m2/repository/com/project/app/my-project/1.0-SNAPSHOT/my-project-1.0-SNAPSHOT.jar
+[INFO] Installing /opt/jenkins/.jenkins/workspace/automated_kshevchenko/home-task/pom.xml to /home/jenkins/.m2/repository/com/project/app/my-project/1.0-SNAPSHOT/my-project-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.475 s
+[INFO] Finished at: 2019-07-30T20:22:02Z
+[INFO] ------------------------------------------------------------------------
+[automated_kshevchenko] $ /bin/sh /tmp/jenkins2913897930459824823.sh
+Recording test results
+Triggering a new build of [8mha:////4Jwpi9+pfg6GxIEcWXwwwKTRwzPV7UrrB1pEUSKtl6o5AAAAoh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgYx/az8JP3ElIz8ZO/ijNSy5IzUvOx8fQD0V+EbywAAAA==[0madhocKshevchenko
+Finished: SUCCESS

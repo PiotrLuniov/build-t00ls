@@ -1,0 +1,35 @@
+Started by user [8mha:////4C/wS0MbZ+caEp/L61M4cvKV9CxC8Dt+Be05lCbDAiSNAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/dLi1CL9xJTczDwAj6GcLcAAAAA=[0madmin
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/Ansible
+Using checkout strategy: Default
+Last Built Revision: Revision da4a1e691f45e274621763ad38aa43997628c2c2 (refs/remotes/origin/master)
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/Korinin/ansible
+ > git init /opt/jenkins/.jenkins/workspace/Ansible # timeout=10
+Fetching upstream changes from https://github.com/Korinin/ansible
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/Korinin/ansible +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/Korinin/ansible # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/Korinin/ansible # timeout=10
+Fetching upstream changes from https://github.com/Korinin/ansible
+ > git fetch --tags --progress https://github.com/Korinin/ansible +refs/heads/*:refs/remotes/origin/*
+getCandidateRevisions(false,origin/master,,,hudson.plugins.git.util.BuildData@8fe5b5f6[scmName=<null>,remoteUrls=[https://github.com/Korinin/ansible],buildsByBranchName={refs/remotes/origin/master=Build #2 of Revision da4a1e691f45e274621763ad38aa43997628c2c2 (refs/remotes/origin/master)},lastBuild=Build #2 of Revision da4a1e691f45e274621763ad38aa43997628c2c2 (refs/remotes/origin/master)]) considering branches to build
+Qualifying origin/master as a branch in repository origin -> refs/remotes/origin/master
+Qualifying origin/master as a branch in repository origin -> refs/remotes/origin/origin/master
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+rev-parse refs/remotes/origin/master -> AnyObjectId[da4a1e691f45e274621763ad38aa43997628c2c2]
+Found a new commit AnyObjectId[da4a1e691f45e274621763ad38aa43997628c2c2] to be built on refs/remotes/origin/master
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Failed to rev-parse: refs/remotes/origin/origin/master
+Checking out Revision da4a1e691f45e274621763ad38aa43997628c2c2 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f da4a1e691f45e274621763ad38aa43997628c2c2
+Commit message: "Create readme.md"
+ > git rev-list --no-walk da4a1e691f45e274621763ad38aa43997628c2c2 # timeout=10
+[Ansible] $ /bin/sh -xe /tmp/jenkins4045262946978158138.sh
++ tar -cvf file.tar readme.md
+readme.md
+Archiving artifacts
+Finished: SUCCESS

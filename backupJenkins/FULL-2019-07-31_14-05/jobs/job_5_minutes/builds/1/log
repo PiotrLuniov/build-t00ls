@@ -1,0 +1,14 @@
+Started by timer
+Running as SYSTEM
+Building in workspace /opt/jenkins/.jenkins/workspace/job_5_minutes
+Installing JDK jdk-8u221-oth-JPR
+Downloading JDK from https://download.oracle.com/otn/java/jdk/8u221-b11/230deb18db3e4014bb8e3e8324f81b43/jdk-8u221-linux-x64.tar.gz
+Downloading 195094741 bytes
+Installing /opt/jenkins/.jenkins/tools/hudson.model.JDK/jdk8/jdk.sh
+[jdk8] $ tar xzf /opt/jenkins/.jenkins/tools/hudson.model.JDK/jdk8/jdk.sh
+[job_5_minutes] $ /bin/sh -xe /tmp/jenkins6088162108905442750.sh
++ ls -la
+total 0
+drwxr-xr-x 2 jenkins jenkins  6 Jul 28 17:03 .
+drwxr-xr-x 3 jenkins jenkins 27 Jul 28 17:03 ..
+Finished: SUCCESS
