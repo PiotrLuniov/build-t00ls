@@ -58,10 +58,6 @@ public class Client implements HelloWorldService {
      */
     @Override
     public String sayHello() {
-        int j;
-        while (true) {
-        j++;
-       }
         return helloWorldService.sayHello();
     }
 
