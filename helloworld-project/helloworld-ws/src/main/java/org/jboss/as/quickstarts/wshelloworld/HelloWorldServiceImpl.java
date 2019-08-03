@@ -65,17 +65,8 @@ public class HelloWorldServiceImpl implements HelloWorldService {
          * If the list is null or empty then assume the call was anonymous.
          */
         if (names == null || names.isEmpty()) {
-            return "Anonymous!";
-             System.out.println("new string");
-             System.out.println("new string");
-             System.out.println("new string");
-             System.out.println("new string");
-             System.out.println("new string");
-            
-            
-            
-            
-            
+            return "Anonymous!";                          
+           
         }
 
         final StringBuilder nameBuilder = new StringBuilder();
@@ -97,9 +88,6 @@ public class HelloWorldServiceImpl implements HelloWorldService {
         return nameBuilder.toString();
     }
     public void infiniteLoopUsingWhile() {
-    while (true) {
-        
-       System.out.println("CI-CD course the best of the best!");
-    }
+
 }
 }
