@@ -1,0 +1,5 @@
+00b02bbbe1d10702c3fb155ebbc87f82117d3c7d
+
+mvn sonar:sonar \
+  -Dsonar.host.url=http://sonar \
+  -Dsonar.login=00b02bbbe1d10702c3fb155ebbc87f82117d3c7d
