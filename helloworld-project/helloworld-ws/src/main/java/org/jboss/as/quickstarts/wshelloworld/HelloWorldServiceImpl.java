@@ -32,18 +32,6 @@ public class HelloWorldServiceImpl implements HelloWorldService {
 
     @Override
     public String sayHello() {
-        System.out.println("I'm a custom message, that wasn't there");
-        if (3 < 5){
-           return "Hello Java!"
-        }
-        int j = 0;
-        for (i = 0; i < 10; j++) {
-            i++;
-        }
-        int k = 10;
-        while (k < 0){
-          if(k != 10) {System.out.println("k is not 10");}
-        }
         return "Hello World!";
     }
 
@@ -59,10 +47,6 @@ public class HelloWorldServiceImpl implements HelloWorldService {
 
     @Override
     public String sayHelloToNames(final List<String> names) {
-        int j;
-	while (true) { 
-  	j++;
-	}
         return "Hello " + createNameListString(names);
     }
 
