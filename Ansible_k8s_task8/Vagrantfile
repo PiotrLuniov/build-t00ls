@@ -1,0 +1,40 @@
+
+Vagrant.configure("2") do |config|
+
+	config.vm.define "master" do |master|
+  	master.vm.box = "sbeliakou/centos"
+  	master.vm.hostname = "master"
+  	master.vm.network "private_network", ip: "192.168.56.225"
+
+  	master.vm.provider "virtualbox" do |vb|
+  		vb.name = "master"
+  		vb.memory = "10000"
+      vb.cpus = "4"
+  	end
+  end
+  
+  # config.vm.define "worker1" do |worker|
+  # 	worker.vm.box = "sbeliakou/centos"
+  # 	worker.vm.hostname = "worker1"
+  # 	worker.vm.network "private_network", ip: "192.168.56.226"
+
+  # 	worker.vm.provider "virtualbox" do |vb|
+  # 		vb.name = "worker1"
+  # 		vb.memory = "5000"
+  #     vb.cpus = "3"
+  # 	end
+  # end
+
+  # config.vm.define "worker2" do |worker|
+  #   worker.vm.box = "sbeliakou/centos"
+  #   worker.vm.hostname = "worker2"
+  #   worker.vm.network "private_network", ip: "192.168.56.227"
+
+  #   worker.vm.provider "virtualbox" do |vb|
+  #     vb.name = "worker2"
+  #     vb.memory = "3000"
+  #     vb.cpus = "3"
+  #   end
+  # end
+
+end

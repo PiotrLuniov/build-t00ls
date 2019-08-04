@@ -1,0 +1,19 @@
+---
+# tasks file for roles/jenkins_k8s
+
+- name: create directory for persistent volume
+  file:
+    path: "/tmp/jenkins"
+    state: directory
+    mode: '0777'
+    owner: vagrant
+    group: vagrant
+    
+- name:
+  shell: >
+    kubectl create namespace jenkins
+  ignore_errors: yes
+
+- name: apply jenkins config
+  shell: >
+    kubectl apply --namespace=jenkins -f /vagrant/roles/jenkins_k8s/files/jenkins.yml

@@ -1,0 +1,8 @@
+
+
+- name: join worker to cluster
+  shell: >
+    kubeadm join {{ hostvars['master'].ansible_host }}:{{ hostvars['master'].kube_port }} 
+    --token abcdef.0123456789abcdef 
+    --discovery-token-unsafe-skip-ca-verification
+  ignore_errors: yes

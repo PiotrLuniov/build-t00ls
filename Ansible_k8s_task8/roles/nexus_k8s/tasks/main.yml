@@ -1,0 +1,19 @@
+---
+# tasks file for roles/nexus_k8s
+
+- name: create directory for persistent volume
+  file:
+    path: "/tmp/nexus"
+    state: directory
+    mode: '0777'
+    owner: vagrant
+    group: vagrant
+
+- name: create namespace
+  shell: >
+    kubectl create namespace nexus
+  ignore_errors: yes
+
+- name: applying configs
+  shell: >
+    kubectl apply --namespace=nexus -f /vagrant/roles/nexus_k8s/files/nexus.yml

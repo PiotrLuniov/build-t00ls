@@ -1,0 +1,19 @@
+---
+# tasks file for roles/postgres
+
+- name: create directory for persistent volume
+  file:
+    path: "{{ localPath }}"
+    state: directory
+    mode: '0766'
+    owner: vagrant
+    group: vagrant
+
+- name: create namespace
+  shell: >
+    kubectl create namespace postgres
+  ignore_errors: yes
+
+- name: applying configs
+  shell: >
+    kubectl apply -f /vagrant/roles/postgres_k8s/files/postgres.yml

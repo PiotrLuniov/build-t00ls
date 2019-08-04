@@ -1,0 +1,27 @@
+---
+# tasks file for roles/sonar
+
+- name: create directory for persistent volume
+  file:
+    path: "/tmp/sonar/data"
+    state: directory
+    mode: '0766'
+    owner: vagrant
+    group: vagrant
+
+- name: create directory for persistent volume
+  file:
+    path: "/tmp/sonar/extensions"
+    state: directory
+    mode: '0766'
+    owner: vagrant
+    group: vagrant
+
+- name: create namespace
+  shell: >
+    kubectl create namespace sonar
+  ignore_errors: yes
+
+- name: applying configs
+  shell: >
+    kubectl apply -f /vagrant/roles/sonar_k8s/files/sonar.yml

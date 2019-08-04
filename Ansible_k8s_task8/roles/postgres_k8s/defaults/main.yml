@@ -1,0 +1,4 @@
+---
+# defaults file for roles/postgres
+
+localPath: "/tmp/postgres"

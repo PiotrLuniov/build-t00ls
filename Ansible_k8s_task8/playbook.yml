@@ -1,0 +1,22 @@
+- hosts: master:workers
+
+
+- name: install k8s
+  hosts: master
+  become: yes
+  roles:
+    - role: k8s
+      vars:
+        taint_mode: "yes"
+
+
+- name: install services on k8s
+  hosts: master
+  become: yes
+  roles:
+    - role: jenkins_k8s
+    - role: sonar_k8s
+    - role: nexus_k8s
+
+
+

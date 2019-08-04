@@ -1,0 +1,31 @@
+
+- name: create docker conf dir
+  file:
+    path: /etc/docker
+    state: directory
+
+- name: create daemon json
+  copy:
+    content: |
+      {
+          "exec-opts": [
+              "native.cgroupdriver=systemd"
+          ],
+          "insecure-registries" : [
+              "https://nexus-svc.nexus.svc.cluster.local:18079",
+              "http://nexus-svc.nexus.svc.cluster.local:18079"
+          ]
+      }
+    dest: /etc/docker/daemon.json
+  notify: "reload docker"
+  
+- meta: flush_handlers
+
+- name: create docker conf iptables
+  copy:
+    content: |
+      net.bridge.bridge-nf-call-ip6tables = 1
+      net.bridge.bridge-nf-call-iptables = 1
+    dest: /etc/sysctl.d/docker.conf
+
+- shell: sysctl --system
