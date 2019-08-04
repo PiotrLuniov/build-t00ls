@@ -12,7 +12,7 @@ RUN yum -y install java
 RUN java -version
 
 WORKDIR /opt/tomcat/webapps
-RUN curl -O -L http://nexus/repository/my_maven_hosted/group_task_8/helloworld-ymlechka%3Arc-$BUILD_NUMBER/1.$BUILD_NUMBER/helloworld-ymlechka%3Arc-$BUILD_NUMBER-1.$BUILD_NUMBER.war
+RUN curl -O -L  http://10.111.179.68:8083/repository/my_maven_hosted/group_task_8/helloworld-ymlechka%3Arc-50/1.50/helloworld-ymlechka%3Arc-50-1.50.war
 EXPOSE 8080
 
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
