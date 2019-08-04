@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgresql-service
+  namespace: jenkins
+  labels:
+    db: postgresql
+spec:
+  selector:
+    db: postgresql
+  type: ClusterIP
+  ports:
+  - name: postgresql-svc
+    protocol: TCP
+    port: 5432
+    targetPort: postgresql-port

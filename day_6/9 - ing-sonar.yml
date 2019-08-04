@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sonarqube-ingress
+  namespace: jenkins
+spec:
+  rules:
+  - host: sonar
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: sonarqube-service
+          servicePort: sonarqube-svc

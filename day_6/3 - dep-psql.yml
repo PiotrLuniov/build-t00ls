@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgresql-deployment
+  namespace: jenkins
+  labels:
+    db: postgresql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      db: postgresql
+  template:
+    metadata:
+      labels:
+        db: postgresql
+    spec:
+      containers:
+      - name: postgresql
+        image: postgres
+        env:
+        - name: POSTGRES_USER
+          value: sonar
+        - name: POSTGRES_PASSWORD
+          value: sonar
+        ports:
+        - name: postgresql-port
+          containerPort: 5432
+        volumeMounts:
+        - name: postgresql-data
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: postgresql-data
+        persistentVolumeClaim:
+          claimName: postgresql-pvc
