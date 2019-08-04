@@ -14,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/*
 package org.jboss.as.quickstarts.wshelloworld;
 
 import java.util.ArrayList;
@@ -25,7 +26,6 @@ import javax.jws.WebService;
  * The implementation of the HelloWorld JAX-WS Web Service.
  *
  * @author lnewson@redhat.com
- */
 @WebService(serviceName = "HelloWorldService", portName = "HelloWorld", name = "HelloWorld", endpointInterface = "org.jboss.as.quickstarts.wshelloworld.HelloWorldService",
     targetNamespace = "http://www.jboss.org/eap/quickstarts/wshelloworld/HelloWorld")
 public class HelloWorldServiceImpl implements HelloWorldService {
@@ -38,7 +38,6 @@ public class HelloWorldServiceImpl implements HelloWorldService {
     @Override
     public String sayHelloToName(final String name) {
 
-        /* Create a list with just the one value */
         final List<String> names = new ArrayList<>();
         names.add(name);
 
@@ -58,12 +57,10 @@ public class HelloWorldServiceImpl implements HelloWorldService {
      *
      * @param names A list of names
      * @return The list of names separated as described above.
-     */
     private String createNameListString(final List<String> names) {
 
         /*
          * If the list is null or empty then assume the call was anonymous.
-         */
         if (names == null || names.isEmpty()) {
             return "Anonymous!";
         }
@@ -73,7 +70,6 @@ public class HelloWorldServiceImpl implements HelloWorldService {
 
             /*
              * Add the separator if its not the first string or the last separator since that should be an and (&) symbol.
-             */
             if (i != 0 && i != names.size() - 1)
                 nameBuilder.append(", ");
             else if (i != 0 && i == names.size() - 1)
@@ -87,3 +83,4 @@ public class HelloWorldServiceImpl implements HelloWorldService {
         return nameBuilder.toString();
     }
 }
+*/

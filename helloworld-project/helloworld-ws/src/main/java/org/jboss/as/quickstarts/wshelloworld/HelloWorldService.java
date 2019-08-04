@@ -14,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+/*
 package org.jboss.as.quickstarts.wshelloworld;
 
 import java.util.List;
@@ -25,7 +26,7 @@ import javax.jws.WebService;
  *
  * @author lnewson@redhat.com
  */
-
+/*
 @WebService(targetNamespace = "http://www.jboss.org/eap/quickstarts/wshelloworld/HelloWorld")
 public interface HelloWorldService {
 
@@ -33,7 +34,6 @@ public interface HelloWorldService {
      * Say hello as a response
      *
      * @return A simple hello world message
-     */
     @WebMethod
     String sayHello();
 
@@ -42,7 +42,6 @@ public interface HelloWorldService {
      *
      * @param name The name of the person to say hello to
      * @return the number of current bookings
-     */
     @WebMethod
     String sayHelloToName(String name);
 
@@ -51,7 +50,6 @@ public interface HelloWorldService {
      *
      * @param names The list of names to say hello to
      * @return the number of current bookings
-     */
     @WebMethod
     String sayHelloToNames(List<String> names);
-}
+}*/
