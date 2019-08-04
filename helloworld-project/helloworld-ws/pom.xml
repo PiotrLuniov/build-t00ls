@@ -39,7 +39,7 @@
 
     <properties>
         <!-- Remote Server URL -->
-        <remote.server.url>http://localhost:8080/</remote.server.url>
+        <remote.server.url>http://123:8080/</remote.server.url>
     </properties>
 
     <dependencies>
