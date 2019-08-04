@@ -13,7 +13,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
 package org.jboss.as.quickstarts.wshelloworld;
 
 import static org.junit.Assert.assertEquals;
@@ -36,16 +35,13 @@ import org.junit.runner.RunWith;
  * Simple set of tests for the HelloWorld Web Service to demonstrate accessing the web service using a client
  *
  * @author lnewson@redhat.com
- */
 @RunWith(Arquillian.class)
 public class ClientArqIT {
     /**
      * The name of the WAR Archive that will be used by Arquillian to deploy the application.
-     */
     private static final String APP_NAME = "helloworld-ws";
     /**
      * The path of the WSDL endpoint in relation to the deployed web application.
-     */
     private static final String WSDL_PATH = "HelloWorldService?wsdl";
 
     @ArquillianResource
@@ -107,3 +103,4 @@ public class ClientArqIT {
         System.out.println("[WebService] " + response);
     }
 }
+

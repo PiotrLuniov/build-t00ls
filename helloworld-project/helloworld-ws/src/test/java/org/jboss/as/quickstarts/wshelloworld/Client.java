@@ -13,7 +13,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
 package org.jboss.as.quickstarts.wshelloworld;
 
 import javax.xml.namespace.QName;
@@ -26,7 +25,6 @@ import java.util.List;
  * A Client stub to the HelloWorld JAX-WS Web Service.
  *
  * @author lnewson@redhat.com
- */
 public class Client implements HelloWorldService {
     private HelloWorldService helloWorldService;
 
@@ -34,7 +32,6 @@ public class Client implements HelloWorldService {
      * Default constructor
      *
      * @param url The URL to the Hello World WSDL endpoint.
-     */
     public Client(final URL wsdlUrl) {
         QName serviceName = new QName("http://www.jboss.org/eap/quickstarts/wshelloworld/HelloWorld", "HelloWorldService");
 
@@ -48,14 +45,12 @@ public class Client implements HelloWorldService {
      *
      * @param url The URL to the Hello World WSDL endpoint.
      * @throws MalformedURLException if the WSDL url is malformed.
-     */
     public Client(final String url) throws MalformedURLException {
         this(new URL(url));
     }
 
     /**
      * Gets the Web Service to say hello
-     */
     @Override
     public String sayHello() {
         return helloWorldService.sayHello();
@@ -63,7 +58,6 @@ public class Client implements HelloWorldService {
 
     /**
      * Gets the Web Service to say hello to someone
-     */
     @Override
     public String sayHelloToName(final String name) {
         return helloWorldService.sayHelloToName(name);
@@ -71,7 +65,6 @@ public class Client implements HelloWorldService {
 
     /**
      * Gets the Web Service to say hello to a group of people
-     */
     @Override
     public String sayHelloToNames(final List<String> names) {
         return helloWorldService.sayHelloToNames(names);

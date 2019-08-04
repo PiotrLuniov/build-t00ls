@@ -13,7 +13,6 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
 package org.jboss.as.quickstarts.wshelloworld;
 
 import static org.junit.Assert.assertEquals;
@@ -32,25 +31,19 @@ import org.junit.Test;
  * Simple set of tests for the HelloWorld Web Service to demonstrate accessing the web service using a client
  *
  * @author lnewson@redhat.com
- */
 public class ClientTest {
     /**
      * The name of the WAR Archive that will be used by Arquillian to deploy the application.
-     */
     private static final String APP_NAME = "helloworld-ws";
     /**
      * The path of the WSDL endpoint in relation to the deployed web application.
-     */
     private static final String WSDL_PATH = "HelloWorldService?wsdl";
 
     /**
      * The name for the Server URL System Property.
-     */
     private static final String SERVER_URL_PROPERTY = "serverUrl";
     /**
      * The Default Server URL if one isn't specified as a System Property
-     */
-    private static final String DEFAULT_SERVER_URL = "http://localhost:8080/";
 
     private static URL deploymentUrl;
 
