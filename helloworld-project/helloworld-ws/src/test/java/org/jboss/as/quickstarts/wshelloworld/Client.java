@@ -70,3 +70,4 @@ public class Client implements HelloWorldService {
         return helloWorldService.sayHelloToNames(names);
     }
 }
+*/
