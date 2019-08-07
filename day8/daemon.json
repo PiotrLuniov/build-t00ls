@@ -1,0 +1,8 @@
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "insecure-registries" : ["10.111.179.68:8083"]
+}
+
+
+
+///etc/docker/daemon.json

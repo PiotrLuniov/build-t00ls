@@ -1,0 +1,60 @@
+  cat << EOS > deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat
+  namespace: default
+  labels:
+    app: tomcat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tomcat
+  template:
+    metadata:
+      labels:
+        app: tomcat
+    spec:
+      containers:
+        - name: tomcat
+          image: "10.111.179.68:8083/task8:$BUILD"
+          ports:
+            - name: tomcatport
+              containerPort: 8080
+      imagePullSecrets:
+        - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat-service
+  namespace: default
+spec:
+  selector:
+    app: tomcat
+  type: LoadBalancer
+  ports:
+    - name: tomcatsvcport
+      port: 8080
+      targetPort: tomcatport
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: tomcat-ingress
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /helloworld-ymlechka89-1/
+spec:
+  rules:
+  - host: tomcat
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: tomcat-service
+          servicePort: tomcatsvcport
+EOS
+
+
