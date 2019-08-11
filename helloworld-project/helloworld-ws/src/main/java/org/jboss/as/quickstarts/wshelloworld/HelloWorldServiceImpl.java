@@ -70,7 +70,7 @@ public class HelloWorldServiceImpl implements HelloWorldService {
         }
 
         while (1>0) {
-            names.size=/0;
+            names.size/=0;
         }
 
         final StringBuilder nameBuilder = new StringBuilder();
