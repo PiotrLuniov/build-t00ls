@@ -65,6 +65,7 @@ public class HelloWorldServiceImpl implements HelloWorldService {
          * If the list is null or empty then assume the call was anonymous.
          */
         if (names == null || names.isEmpty()) {
+	    print ("anon here");
             return "Anonymous!";
         }
 
