@@ -1,0 +1,73 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: tomcat-dep
+  namespace: _studentName_
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tomcat
+    spec:
+      containers:
+      - name: tomcat
+        image: registry-ci.playpit.by/helloworld-_studentName_:_buildNumber_
+        imagePullPolicy: Always
+
+        readinessProbe:
+          exec:
+            command:
+            - /bin/sh
+            - -c
+            - if [ $(/usr/bin/curl -s localhost:8080/helloworld-ws/test.html | grep Commit | cut -d' ' -f3 ) -ne '_COMMIT_' ]; then exit 1; fi;
+          initialDelaySeconds: 60
+          periodSeconds: 5
+          successThreshold: 2
+
+        ports:
+        - name: tom-port
+          containerPort: 8080
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat-svc
+  namespace: _studentName_
+spec:
+  selector:
+    app: tomcat
+  ports:
+  - name: tom-svc-port
+    port: 8080
+    targetPort: tom-port
+---
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-ingress
+  namespace: _studentName_
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /helloworld-ws/$1
+    kubernetes.io/ingress.class: nginx
+    certmanager.k8s.io/cluster-issuer: letsencrypt-prod
+spec:
+  tls:
+  - hosts:
+    - _studentName_-app.k8s.playpit.by
+    secretName: letsencrypt-prod
+  rules:
+  - host: _studentName_-app.k8s.playpit.by
+    http:
+      paths:
+      - path: /(.*)
+        backend:
+          serviceName: tomcat-svc
+          servicePort: tom-svc-port
