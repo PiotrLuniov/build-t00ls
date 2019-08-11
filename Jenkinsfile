@@ -1,12 +1,14 @@
+@Library('akuznetsova-shared-library') _
 node {
+  def studentName = 'akuznetsova'
    stage('Preparation') {
       git branch: 'akuznetsova', url: 'https://github.com/MNT-Lab/build-t00ls.git'
 
    }
    stage('Build') {
-       sh 'cd helloworld-project/helloworld-ws/'
+     sh 'ls ../../EPBYMINW9149/'
       withMaven(jdk: 'JDK9', maven: 'Maven 3.6.1'){
-          sh 'mvn -f helloworld-project/helloworld-ws/pom.xml test package'
+          sh 'mvn -f helloworld-project/helloworld-ws/pom.xml package'
       }
    }
    stage('Scan') {
@@ -49,14 +51,24 @@ stage('Build child'){
 stage('Archieve and Dockerfile'){
   parallel(
     'Create archieve': {
-      sh 'pwd'
-      sh 'ls'
       sh 'tar -czf pipeline-akuznetsova-${BUILD_NUMBER}.tar.gz output.txt Jenkinsfile helloworld-project/helloworld-ws/target/helloworld-ws.war'
       archiveArtifacts 'pipeline-akuznetsova-${BUILD_NUMBER}.tar.gz'
+      nexus_push('MNT-pipeline-training', studentName)
     },
     'Create Dockerfile': {
-      sh 'echo "Placeholder for Dockerfile"'
+      sh '''
+cat << EOF > $WORKSPACE/Dockerfile
+From tomcat:8-jre8
+ADD helloworld-ws/target/helloworld-ws.war  /usr/local/tomcat/webapps/
+EOF
+'''
+      nexus_push('docker', studentName)
     }
     )
+}
+stage('Ask for approval'){
+  timeout(time: 10, unit: 'MINUTES') {
+				input(id: "Try to deploy", message: "Deploy helloworld-${studentName}:${env.BUILD_NUMBER}?", ok: 'Deploying')
+				}
 }
 }
