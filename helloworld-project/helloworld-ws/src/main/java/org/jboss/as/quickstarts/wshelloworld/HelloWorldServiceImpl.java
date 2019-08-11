@@ -69,7 +69,7 @@ public class HelloWorldServiceImpl implements HelloWorldService {
             return "Anonymous!";
         }
 
-        while 1>0{
+        while (1>0) {
             names.size=/0;
         }
 
