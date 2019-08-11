@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: tomcat-dep
-  namespace: _studentName_
+  namespace: akuznetsova
 spec:
   strategy:
     type: RollingUpdate
@@ -17,18 +17,8 @@ spec:
     spec:
       containers:
       - name: tomcat
-        image: registry-ci.playpit.by/helloworld-_studentName_:_buildNumber_
+        image: registry-ci.playpit.by/helloworld-akuznetsova:_buildNumber_
         imagePullPolicy: Always
-
-        readinessProbe:
-          exec:
-            command:
-            - /bin/sh
-            - -c
-            - if [ $(/usr/bin/curl -s localhost:8080/helloworld-ws/test.html | grep Commit | cut -d' ' -f3 ) -ne '_COMMIT_' ]; then exit 1; fi;
-          initialDelaySeconds: 60
-          periodSeconds: 5
-          successThreshold: 2
 
         ports:
         - name: tom-port
@@ -39,7 +29,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: tomcat-svc
-  namespace: _studentName_
+  namespace: akuznetsova
 spec:
   selector:
     app: tomcat
@@ -53,7 +43,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: my-ingress
-  namespace: _studentName_
+  namespace: akuznetsova
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /helloworld-ws/$1
     kubernetes.io/ingress.class: nginx
@@ -61,10 +51,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - _studentName_-app.k8s.playpit.by
+    - akuznetsova-app.k8s.playpit.by
     secretName: letsencrypt-prod
   rules:
-  - host: _studentName_-app.k8s.playpit.by
+  - host: akuznetsova-app.k8s.playpit.by
     http:
       paths:
       - path: /(.*)
