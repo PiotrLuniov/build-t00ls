@@ -5,7 +5,7 @@ node('worker') {
 
     stage('Building code') {
         withMaven(jdk: 'java-8u221', maven: 'maven_auto_3.6.1', mavenSettingsConfig: 'maven-proxy-v2') {
-            sh 'mvn -f helloworld-project/helloworld-ws/pom.xml clean install'
+            sh 'mvn -f helloworld-project/helloworld-ws/pom.xml clean install -U'
         }
     }
 
