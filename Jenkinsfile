@@ -9,13 +9,13 @@ node('worker') {
         }
     }
 
-    stage('Sonar scan') {
-        // https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-jenkins/
-        def scannerHome = tool 'SonarScanner'
-        withSonarQubeEnv() {  // Will pick the global server connection you have configured
-            sh "${scannerHome}/bin/sonar-scanner"
-        }
-    }
+    // stage('Sonar scan') {
+    //     // https://docs.sonarqube.org/latest/analysis/scan/sonarscanner-for-jenkins/
+    //     def scannerHome = tool 'SonarScanner'
+    //     withSonarQubeEnv() {  // Will pick the global server connection you have configured
+    //         sh "${scannerHome}/bin/sonar-scanner"
+    //     }
+    // }
 
     stage('Testing') {
           parallel(
