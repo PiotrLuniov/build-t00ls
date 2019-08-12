@@ -22,11 +22,11 @@ node('worker') {
               'pre-integration-test':{
                 sh 'cd helloworld-project/helloworld-ws/ &&  ' +
                 'mvn pre-integration-test'
-              }
+              },
               'integration-test':{
                 sh 'cd helloworld-project/helloworld-ws/ &&  ' +
                 'mvn integration-test'
-              }
+              },
               'post-integration-test':{
                 sh 'cd helloworld-project/helloworld-ws/ &&  ' +
                 'mvn integration-test'
