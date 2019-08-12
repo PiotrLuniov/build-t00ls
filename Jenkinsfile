@@ -19,17 +19,23 @@ node('worker') {
 
     stage('Testing') {
           parallel(
-              withMaven(jdk: 'java-8u221', maven: 'maven_auto_3.6.1', mavenSettingsConfig: 'custom-maven-setting') {
-              sh 'cd helloworld-project/helloworld-ws/ &&  ' +
-              'mvn pre-integration-test'
-              }
-              withMaven(jdk: 'java-8u221', maven: 'maven_auto_3.6.1', mavenSettingsConfig: 'custom-maven-setting') {
-              sh 'cd helloworld-project/helloworld-ws/ &&  ' +
-              'mvn integration-test'
-              }
-              withMaven(jdk: 'java-8u221', maven: 'maven_auto_3.6.1', mavenSettingsConfig: 'custom-maven-setting') {
-              sh 'cd helloworld-project/helloworld-ws/ &&  ' +
-              'mvn post-integration-test'
+              'pre Integration': {
+                withMaven(jdk: 'java-8u221', maven: 'maven_auto_3.6.1', mavenSettingsConfig: 'custom-maven-setting') {
+                sh 'cd helloworld-project/helloworld-ws/ &&  ' +
+                'mvn pre-integration-test'
+                }
+              },
+              'integration': {
+                withMaven(jdk: 'java-8u221', maven: 'maven_auto_3.6.1', mavenSettingsConfig: 'custom-maven-setting') {
+                sh 'cd helloworld-project/helloworld-ws/ &&  ' +
+                'mvn integration-test'
+                }
+              },
+              'post integration': {
+                withMaven(jdk: 'java-8u221', maven: 'maven_auto_3.6.1', mavenSettingsConfig: 'custom-maven-setting') {
+                sh 'cd helloworld-project/helloworld-ws/ &&  ' +
+                'mvn post-integration-test'
+                }
               }
           )
     }
